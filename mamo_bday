@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+
+import colors as c
+
+title = format('''
+  __  __          __  __  ____        
+ |  \/  |   /\   |  \/  |/ __ \       
+ | \  / |  /  \  | \  / | |  | |      
+ | |\/| | / /\ \ | |\/| | |  | |      
+ | |  | |/ ____ \| |  | | |__| |      
+ |_|__|_/_/   _\_\_|__|_|\____/______ 
+  / __ \| |  | |  ____|/ ____|__   __|
+ | |  | | |  | | |__  | (___    | |   
+ | |  | | |  | |  __|  \___ \   | |   
+ | |__| | |__| | |____ ____) |  | |   
+  \___\_\\____/|______|_____/   |_|
+''')
+
+print(c.clear)
+print(title)
+
+print("What is your name?")
+name = input("> ")
+if name == 'Kim':
+    print("Happy Birthday!")
+
+    plot1 = format('''
+        Today is your birthday!  For some reason, everyone's missing!
+    Did they forget about your birthday?  You decide to search for them.
+    Which direction would you like to go? (north, south, east, or west)
+    ''')
+    print(plot1)
+    direction = input("> ")
+
+    if direction == 'north':
+        print('You walk straight into a wall.  GAME OVER')
+    elif direction == 'south':
+        print('You walk into your bedroom and fall asleep.  GAME OVER')
+    elif direction == 'east':
+        print('You walk into the hot tub and stay there forever.  GAME OVER')
+    elif direction == 'west':
+        plot2 = format("""
+            You walk into another room and find your family tied up with rope.
+        Baby Simba stands there, laughing maniacally.  How annoying!  Suddenly,
+        Baby Simba attacks!  What do you do?
+        >Fight
+        >Item
+        >Run
+        """)
+        
+        print(plot2)
+        command = input("> ")
+        if command == 'Fight':
+            print("You punch Baby Simba in the face.  999 damage to Baby Simba!  Baby Simba was defeated!  YOU WON!")
+        elif command == 'Item':
+            print("You throw a ball of yarn.  Baby Simba chases after it.  YOU WON!")
+        elif command == "Run":
+            print("You run away.  Baby Simba chases after you, but trips and falls over.  YOU WON!")
+        else:
+            print("Baby Simba gets bored of waiting for your command and leaves.  YOU WON!")
+        plot3 = format('''
+            You untie your family.  Reunited, you all celebrate your birthday together.  What a great day!
+        ''')
+        print(plot3)
+        card = format("""
+        Dear Mamo,
+
+            Happy Birthday!  Even though I can get mad at you sometimes, I still love you deep down in my heart.  Hope you have a great
+        birthday with your wonderful family!
+
+        Forever your son,
+        Rees
+
+        """)
+        print(card)
+    else:
+        print("That's not a direction, flunky Spheal!  GAME OVER")
+else:
+    print("Sorry, but this game is for Mamo only!")
+
+
+
+
+
+
+
