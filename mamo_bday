@@ -77,10 +77,3 @@ if name == 'Kim':
         print("That's not a direction, flunky Spheal!  GAME OVER")
 else:
     print("Sorry, but this game is for Mamo only!")
-
-
-
-
-
-
-
