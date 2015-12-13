@@ -3,6 +3,7 @@
 import colors as c
 
 print(c.clear)
+angry = False
 title = format('''
     _____________  ___________                 ______________________________________________________   __
     ___  __/__  / / /__  ____/                 ___  __ \__    |__  /___  /___    |__  __ \___  _/__  | / /
@@ -14,13 +15,145 @@ title = format('''
 ''')
 print(title)
 
-print("You wake up and get out of bed.  You look at your nighttable and gaze at a small sheet with three small colored boxes.  Today is the day you get your new dental fillings.  You have to choose between three colors: gold, silver, and copper.  Which do you choose?")
+print("You wake up and get out of bed.  You look at your nighttable and gaze at a small sheet with three small colored boxes.  Today is the day you get your new dental   fillings.  You have to choose between three colors: gold, silver, and copper.  Which do you choose?")
+
 fillings = input("> ")
+
 if fillings == "gold":
-    print("Cool")
+    print(c.clear)
+    print("The flashiest choice, and thus the best.")
 elif fillings == "silver":
-    print("Great")
+    print(c.clear)
+    print("A fitting choice.  Matches your wardrobe.")
 elif fillings == "copper":
-    print("Amazing")
+    print(c.clear)
+    print("What?  Copper fillings make it look like you teeth rusted or something.  What kind of a choice is that?")
 else:
-    print("Fail")
+    print("Uh, that's not an option.")
+
+print("Your name is Pallas Wollaston.  You are the founder and CEO of Ceramic, a computer manufacturing company.  This company has made you ridiculously rich, and you spend most of the money on flashy clothes; a big waste of money in the opinion of most, but you don't see much of a problem with it.  Suddenly, your phone starts ringing like crazy.  Answer it?")
+
+phone = input("> ")
+
+if phone == "yes":
+    print(c.clear)
+    print("You answer the phone.")
+elif phone == "no":
+    print(c.clear)
+    print("You decide to ignore the call and head off to get your new dental fillings.  Upon returning home, you receive another call.  You answer this call.")
+else:
+    print("This is a yes or no question!  It's not that hard to answer!")
+
+print('The caller simply says "Bond" and then hangs up.  You do not find this call unusual at all, however.  Instead, you quicky rush to your personal library and push aside a bookshelf, revealing a secret passage.  You grab a book and then walk down the passage.  At the end of the passage is an elevator.  You take the elevator down, reading a book while listening to some relaxing elevator music.  You walk out of the elevator and into a small meeting room.  Two people stand around the meeting table: an old man with gray hair and and young man.  Who do you talk to?')
+
+talk = input("> ")
+
+if talk == "old man":
+    print(c.clear)
+    print("You consider talking to the old man, but decide against it.  After all, this is Platinus Wollaston we're talking about.  The father who abandoned you because he thought one son was trouble enough.  Yeah, talking to him might be a bit awkward.")
+elif talk == "young man":
+    print(c.clear)
+    print("You consider talking to the young man, but decide against it.  After all, this is Rhodes Wollaston we're talking about.  Your twin brother whom your father chose over you because he was born 3 minutes before you.  Yeah, talking to him might be a bit awkward.")
+else:
+    print("What, you're not going to talk to anyone?  That's pretty rude.  You should at least TRY to be social.")
+
+print('Suddenly, the old man speaks up. "Seems the others are late as usual. *Sigh* Are my children the only people besides me who have any respect for the Noble Metals?  I, for one, find it to be among the best superhero leagues out there.  I created it, after all.')
+print('"Maybe they would have been more eager to come if you had called a bit later in the day," you say angrily.  "People have lives, you know.  Not everything revolves around you, Platinus."')
+print('"Silence, Pallas," Platinus responds.  "You should respect your elders."')
+print('"Why should I respect the person who abandoned me and forced me to spend the entirety of my childhood reading books in an orphanage!"')
+
+if phone == "yes":
+    if fillings == "gold":
+        print('The young man interrupts.  "Uh, speaking of having lives, I see that you got new fillings, Pallas.  I really like that shiny gold color!"')
+    elif fillings == "silver":
+        print('The young man interrupts.  "Uh, speaking of having lives, I see that you got new fillings, Pallas.  That silver color goes really well with your outfit!"')
+    elif fillings == "copper":
+        print('The young man interrupts.  "Uh, speaking of having lives, I see that you got new fillings, Pallas.  But... copper?  Seriosly?  It looks like your teeth are rusted or something!"')
+else:
+    print('The young man interrupts.  "Uh, speaking of having lives, it seems like your life is not that important to you, Pallas.  After all, you never got those new dental fillings you said you would get!"')
+
+print('"Quiet, Rhodes," you say angrily.  "And stop changing the subject every time Platinus and I argue.  I would like to get my point across for once without getting distracted by you asking about my favorite ice cream flavor, thank you very much."')
+print('"Anyway," Platinus says, agitated, "Here is the deal.  The Elemental Museum got broken into, and the Periodic Table was stolen.  As you all know, the Periodic Table is an ancient, priceless, and one-of-a-kind artifact.  I suspect that dastardly group of villains known as the Noble Gases are behind this most heinous crime.  Our mission is to retrieve the Periodic Table and return it to the Elemental Museum."')
+print('"How will we find it?" Rhodes asks timidly.')
+print('"A criminal always returns to the scene of the crime," you say knowledgeably.  "We should head to the Elemental Museum first."')
+print('"Excellent idea, Pallas," Platinus responds.  "As usual, your intellect comes in handy.  Of course, you would have never obtained your outstanding genius if I had not disowned you all these years ago.  I must say, that was one of the greatest decisions of my most magnificent life!  But enough talk.  We had best get going."')
+
+print('You, Platinus, and Rhodes arrive at the Elemental Museum.  The museum has two entrances: a front and a back.  You know the Noble Gases are most likely inside and have probably set traps.  Which entrance should you go through?')
+
+door = input("> ")
+
+if door == "front":
+    print(c.clear)
+    print('The Noble Metals walk through the front door.  Lost in thought, you accidentally hit a tripwire.  Out of nowhere, a pie hits you in the face.  "Not cool!"  you yell angrily.  You wipe the pie residue off your face and march deeper into the museum.')
+    print('Note: Pallas is now angry.  She is much weaker when angry, so be careful!')
+    angry = True
+elif door == "back":
+    print(c.clear)
+    print('The Noble Metals walk through the back door.  Lost in thought, you accidentally hit a tripwire.  A bucket of acid pours onto your group.  You all keep walking, completely unharmed.  After all, all of the Noble Metals are immune to acids.  "These guys must be really stupid if they think they can stop US with a little acid," you think to yourself.  You then continue deeper into the museum.')
+
+else:
+    print('You climb on top of the museum, destroy the roof, and drop straight in.')
+
+print('In the center of the museum, you find the Noble Gases standing around a book.  "Stop right there!" you bellow.  The Noble Gases quickly spin around.  Their leader, Helium, started to speak.  "Hey! We only came here to read this book, okay?"')
+print('"And why are you reading that book, exactly?"  You ask."')
+print('"We were just, uh, reading up on this thing called Ununoctium.  No one knows exactly what it is, but it can apparently be used to power up that Periodic Table we stole- oops."')
+print('"Aha!  So you admit it!"  You shout triumphantly.  "You have two choices: Hand over the Periodic Table peacefully, or have it taken from you by force."')
+print('"You already know the answer," Helium responds.  "After all, we have never been the best at interacting with others.  Do you really expect us to just talk it out?"  The Noble Gases lunge at the Noble Metals, but are suddenly knocked aside.  The other Noble Metals had finally arrived!  The scene quickly turned into an all-out battle, with Gases and Metals fighting all over the place.  In the midst of the conflict, Xenon, one of the Noble Gases, approaches you.')
+print('"We meet again, Palladin," Xenon says.  "Feeling down about being the lowest-ranked member of your team?"')
+print('"You are the lowest-ranked member of YOUR team," you retort."')
+print('"Whatever.  Can we hurry up and get this fight started?"')
+
+palladin_hp = 40
+palladin_attack = 5
+if angry == True:
+    palladin_defense = 0
+else:
+    palladin_defense = 3
+
+xenon_hp = 40
+xenon_attack = 10
+xenon_defense = 0
+
+print('Xenon attacks!')
+
+while xenon_hp > 0:
+    print("It's your turn.  What do you do?")
+    print("> Fight")
+    if palladin_hp < 20:
+        print("Palladin is getting weak.  Palladin catches on fire!")
+        print("> Fire")
+    attack = input("> ")
+    if attack == "fight":
+        print("Palladin attacks!")
+        damage = palladin_attack - xenon_defense
+        xenon_hp = xenon_hp - damage
+    elif attack == "fire":
+        print("Palladin throws a fireball!")
+        damage = palladin_attack * 2 - xenon_defense
+        xenon_hp = xenon_hp - damage
+    if xenon_hp > 0:
+        print("Xenon attacks!")
+        damage = xenon_attack - palladin_defense
+        palladin_hp = palladin_hp - damage
+    else:
+        print("Xenon uses a final desperation attack!")
+        damage = xenon_attack
+        palladin_hp = palladin_hp - damage
+
+
+print("Xenon has been defeated!")
+
+print('The Noble Gases collapse to the ground, defeated.  "You have bested us," says Helium.  "We shall return the Periodic Table."  Radon, the newest member of the Noble Gases, appears holding the Periodic Table.  You take it and return it to its spot in the museum.  Both the Noble Gases and the Noble Metals leave.')
+print('Back at HQ, Platinus speaks to you.  "You did good today, Pallas.  Not as good as I did, but good nonetheless.  On behalf of the Noble Metals, I commend you."')
+print('"Uh, thanks," you say awkwardly."')
+print('After a job well done, you return to your room, satisfied.  You take one last look at the colored sheet on your nighttable before falling asleep.')
+end = format('''
+                _____________  ___________   ______________   _________ 
+                ___  __/__  / / /__  ____/   ___  ____/__  | / /__  __ 
+                __  /  __  /_/ /__  __/      __  __/  __   |/ /__  / / /
+                _  /   _  __  / _  /___      _  /___  _  /|  / _  /_/ / 
+                /_/    /_/ /_/  /_____/      /_____/  /_/ |_/  /_____/ 
+
+''')
+
+print(end)
