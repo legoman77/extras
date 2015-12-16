@@ -92,7 +92,8 @@ elif door == "back":
     print('The Noble Metals walk through the back door.  Lost in thought, you accidentally hit a tripwire.  A bucket of acid pours onto your group.  You all keep walking, completely unharmed.  After all, all of the Noble Metals are immune to acids.  "These guys must be really stupid if they think they can stop US with a little acid," you think to yourself.  You then continue deeper into the museum.')
 
 else:
-    print('You climb on top of the museum, destroy the roof, and drop straight in.')
+    print(c.clear)
+    print('You climb on top of the museum, destory the roof, and drop straight in.')
 
 print('In the center of the museum, you find the Noble Gases standing around a book.  "Stop right there!" you bellow.  The Noble Gases quickly spin around.  Their leader, Helium, started to speak.  "Hey! We only came here to read this book, okay?"')
 print('"And why are you reading that book, exactly?"  You ask."')
@@ -100,7 +101,7 @@ print('"We were just, uh, reading up on this thing called Ununoctium.  No one kn
 print('"Aha!  So you admit it!"  You shout triumphantly.  "You have two choices: Hand over the Periodic Table peacefully, or have it taken from you by force."')
 print('"You already know the answer," Helium responds.  "After all, we have never been the best at interacting with others.  Do you really expect us to just talk it out?"  The Noble Gases lunge at the Noble Metals, but are suddenly knocked aside.  The other Noble Metals had finally arrived!  The scene quickly turned into an all-out battle, with Gases and Metals fighting all over the place.  In the midst of the conflict, Xenon, one of the Noble Gases, approaches you.')
 print('"We meet again, Palladin," Xenon says.  "Feeling down about being the lowest-ranked member of your team?"')
-print('"You are the lowest-ranked member of YOUR team," you retort."')
+print('"You are the lowest-ranked member of YOUR team," you retort.')
 print('"Whatever.  Can we hurry up and get this fight started?"')
 
 palladin_hp = 40
@@ -127,19 +128,23 @@ while xenon_hp > 0:
     if attack == "fight":
         print("Palladin attacks!")
         damage = palladin_attack - xenon_defense
+        print("Xenon took " + str(damage) + " damage!")
         xenon_hp = xenon_hp - damage
     elif attack == "fire":
         print("Palladin throws a fireball!")
         damage = palladin_attack * 2 - xenon_defense
         xenon_hp = xenon_hp - damage
+        print("Xenon took " + str(damage) + " damage!")
     if xenon_hp > 0:
         print("Xenon attacks!")
         damage = xenon_attack - palladin_defense
         palladin_hp = palladin_hp - damage
+        print("Palladin took " + str(damage) + " damage!")
     else:
         print("Xenon uses a final desperation attack!")
         damage = xenon_attack
         palladin_hp = palladin_hp - damage
+        print("Palladin took " + str(damage) + " damage!")
 
 
 print("Xenon has been defeated!")
