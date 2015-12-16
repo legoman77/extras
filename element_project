@@ -123,6 +123,7 @@ while xenon_hp > 0:
         print("Palladin is getting weak.  Palladin catches on fire!")
         print("> Fire")
     attack = input("> ")
+    print(c.clear)
     if attack == "fight":
         print("Palladin attacks!")
         damage = palladin_attack - xenon_defense
