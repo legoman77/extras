@@ -1,0 +1,35 @@
+#!/usr/bin/env python3
+
+import colors as c
+
+print(c.clear)
+print("Welcome to the Fire Emblem Battle Calculator!")
+print("Please enter the attacker's stats.")
+attacker_name = input("Attacker's name > ")
+attacker_current_hp = input("Attacker's current HP > ")
+attacker_max_hp = input("Attacker's max HP > ")
+attacker_exp = input("Attacker's current EXP > ")
+attacker_level = input("Attacker's level > ")
+attacker_attack = input("Attacker's Attack > ")
+attacker_magic = input("Attacker's Magic > ")
+attacker_skill = input("Attacker's Skill > ")
+attacker_luck = input("Attacker's Luck > ")
+attacker_speed = input("Attacker's Speed > ")
+attacker_defense = input("Attacker's Defense > ")
+attacker_resistance = input("Attacker's Resistance > ")
+
+
+print("Please enter the defender's stats.")
+defender_name = input("Defender's name > ")
+defender_current_hp = input("Defender's current HP > ")
+defender_max_hp = input("Defender's max HP > ")
+defender_exp = input("Defender's current EXP > ")
+defender_level = input("Defender's level > ")
+defender_attack = input("Defender's Attack > ")
+defender_magic = input("Defender's Magic > ")
+defender_skill = input("Defender's Skill > ")
+defender_luck = input("Defender's Luck > ")
+defender_speed = input("Defender's Speed > ")
+defender_defense = input("Defender's Defense > ")
+defender_resistance = input("Defender's Resistance > ")
+

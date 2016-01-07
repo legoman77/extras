@@ -76,7 +76,7 @@ print('"Quiet, Rhodes," you say angrily.  "And stop changing the subject every t
 print('"Anyway," Platinus says, agitated, "Here is the deal.  The Elemental Museum got broken into, and the Periodic Table was stolen.  As you all know, the Periodic Table is an ancient, priceless, and one-of-a-kind artifact.  I suspect that dastardly group of villains known as the Noble Gases are behind this most heinous crime.  Our mission is to retrieve the Periodic Table and return it to the Elemental Museum."')
 print('"How will we find it?" Rhodes asks timidly.')
 print('"A criminal always returns to the scene of the crime," you say knowledgeably.  "We should head to the Elemental Museum first."')
-print('"Excellent idea, Pallas," Platinus responds.  "As usual, your intellect comes in handy.  Of course, you would have never obtained your outstanding genius if I had not disowned you all these years ago.  I must say, that was one of the greatest decisions of my most magnificent life!  But enough talk.  We had best get going."')
+print('"Excellent idea, Pallas," Platinus responds.  "As usual, your infinite amount of book smarts comes in handy.  Of course, you would have never obtained your outstanding genius if I had not disowned you all these years ago.  I must say, that was one of the greatest decisions of my most magnificent life!  But enough talk.  We had best get going."')
 
 print('You, Platinus, and Rhodes arrive at the Elemental Museum.  The museum has two entrances: a front and a back.  You know the Noble Gases are most likely inside and have probably set traps.  Which entrance should you go through?')
 
@@ -89,7 +89,7 @@ if door == "front":
     angry = True
 elif door == "back":
     print(c.clear)
-    print('The Noble Metals walk through the back door.  Lost in thought, you accidentally hit a tripwire.  A bucket of acid pours onto your group.  You all keep walking, completely unharmed.  After all, all of the Noble Metals are immune to acids.  "These guys must be really stupid if they think they can stop US with a little acid," you think to yourself.  You then continue deeper into the museum.')
+    print('The Noble Metals walk through the back door.  Lost in thought, you accidentally hit a tripwire.  A bucket of acid pours onto your group.  You all keep walking, completely unharmed.  After all, all of the Noble Metals are immune to acids.  This power has been running in the Wollaston family for generations, so naturally you, Rhodes, and Platinus would all have it.  The other Noble Metals had it passed down through their families as well.  "These guys must be really stupid if they think they can stop US with a little acid," you think to yourself.  You then continue deeper into the museum.')
 
 else:
     print(c.clear)
