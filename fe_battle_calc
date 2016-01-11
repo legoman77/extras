@@ -17,6 +17,7 @@ attacker_luck = input("Attacker's Luck > ")
 attacker_speed = input("Attacker's Speed > ")
 attacker_defense = input("Attacker's Defense > ")
 attacker_resistance = input("Attacker's Resistance > ")
+attacker_weapon = input("Attacker's Weapon > ")
 
 
 print("Please enter the defender's stats.")
@@ -32,4 +33,6 @@ defender_luck = input("Defender's Luck > ")
 defender_speed = input("Defender's Speed > ")
 defender_defense = input("Defender's Defense > ")
 defender_resistance = input("Defender's Resistance > ")
+defender_weapon = input("Defender's Weapon > ")
+
 
