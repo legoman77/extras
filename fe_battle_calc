@@ -17,7 +17,19 @@ attacker_luck = input("Attacker's Luck > ")
 attacker_speed = input("Attacker's Speed > ")
 attacker_defense = input("Attacker's Defense > ")
 attacker_resistance = input("Attacker's Resistance > ")
-attacker_weapon = input("Attacker's Weapon > ")
+attacker_weapon_type = input("Attacker's weapon type > ")
+attacker_weapon_uses = input("Attacker's weapon's remaining uses > ")
+attacker_weapon_might = input("Attacker's weapon's Might > ")
+attacker_weapon_hit = input("Attacker's weapon's Hit % > ")
+attacker_weapon_crit = input("Attacker's weapon's Critical Rate > ")
+attacker_weapon_range = input("Attacker's weapon's Range > ")
+attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
+if attacker_weapon_type == "sword" or "lance" or "axe" or "bow" or "beaststone" or "dragonstone":
+    attacker_might = attacker_attack
+    print(attacker_might)
+if attacker_weapon_type == "tome":
+    attacker_might = attacker_magic
+    print(attacker_weapon_might)
 
 
 print("Please enter the defender's stats.")
