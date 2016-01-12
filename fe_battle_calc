@@ -24,13 +24,27 @@ attacker_weapon_hit = input("Attacker's weapon's Hit % > ")
 attacker_weapon_crit = input("Attacker's weapon's Critical Rate > ")
 attacker_weapon_range = input("Attacker's weapon's Range > ")
 attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
-if attacker_weapon_type == "sword" or "lance" or "axe" or "bow" or "beaststone" or "dragonstone":
+if attacker_weapon_type == "sword":
     attacker_might = attacker_attack
     print(attacker_might)
-if attacker_weapon_type == "tome":
+elif attacker_weapon_type == "lance":
+    attacker_might = attacker_attack
+    print(attacker_might)
+elif attacker_weapon_type == "axe":
+    attacker_might = attacker_attack
+    print(attacker_might)
+elif attacker_weapon_type == "bow":
+    attacker_might = attacker_attack
+    print(attacker_might)
+elif attacker_weapon_type == "beaststone":
+    attacker_might = attacker_attack
+    print(attacker_might)
+elif attacker_weapon_type == "dragonstone":
+    attacker_might = attacker_attack
+    print(attacker_might)
+elif attacker_weapon_type == "tome":
     attacker_might = attacker_magic
-    print(attacker_weapon_might)
-
+    print(attacker_might)
 
 print("Please enter the defender's stats.")
 defender_name = input("Defender's name > ")
