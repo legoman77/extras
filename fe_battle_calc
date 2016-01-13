@@ -2,6 +2,8 @@
 
 import colors as c
 
+# Attacker's stats
+
 print(c.clear)
 print("Welcome to the Fire Emblem Battle Calculator!")
 print("Please enter the attacker's stats.")
@@ -24,27 +26,25 @@ attacker_weapon_hit = input("Attacker's weapon's Hit % > ")
 attacker_weapon_crit = input("Attacker's weapon's Critical Rate > ")
 attacker_weapon_range = input("Attacker's weapon's Range > ")
 attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
+
+# Attacker's attack type (physical or magical)
+
 if attacker_weapon_type == "sword":
     attacker_might = attacker_attack
-    print(attacker_might)
 elif attacker_weapon_type == "lance":
     attacker_might = attacker_attack
-    print(attacker_might)
 elif attacker_weapon_type == "axe":
     attacker_might = attacker_attack
-    print(attacker_might)
 elif attacker_weapon_type == "bow":
     attacker_might = attacker_attack
-    print(attacker_might)
 elif attacker_weapon_type == "beaststone":
     attacker_might = attacker_attack
-    print(attacker_might)
 elif attacker_weapon_type == "dragonstone":
     attacker_might = attacker_attack
-    print(attacker_might)
 elif attacker_weapon_type == "tome":
     attacker_might = attacker_magic
-    print(attacker_might)
+
+# Defender's stats
 
 print("Please enter the defender's stats.")
 defender_name = input("Defender's name > ")
@@ -66,47 +66,51 @@ defender_weapon_hit = input("Attacker's weapon's Hit % > ")
 defender_weapon_crit = input("Attacker's weapon's Critical Rate > ")
 defender_weapon_range = input("Attacker's weapon's Range > ")
 defender_weapon_effect = input("Attacker's weapon's added effect(s) > ")
+
+# Defender's attack type (physical or magical) and attacker's defense type (physical or magical)
+
 if defender_weapon_type == "sword":
     defender_might = defender_attack
-    attacker_
+    attacker_defense_power = attacker_defense
     print(defender_might)
 elif defender_weapon_type == "lance":
     defender_might = defender_attack
+    attacker_defense_power = attacker_defense
     print(defender_might)
 elif defender_weapon_type == "axe":
     defender_might = defender_attack
+    attacker_defense_power = attacker_defense
     print(defender_might)
 elif defender_weapon_type == "bow":
     defender_might = defender_attack
+    attacker_defense_power = attacker_defense
     print(defender_might)
 elif defender_weapon_type == "beaststone":
     defender_might = defender_attack
+    attacker_defense_power = attacker_defense
     print(defender_might)
 elif defender_weapon_type == "dragonstone":
     defender_might = defender_attack
+    attacker_defense_power = attacker_defense
     print(defender_might)
 elif defender_weapon_type == "tome":
     defender_might = defender_magic
+    attacker_defense_power = attacker_resistance
     print(defender_might)
 
+# Defender's defense type (physical or magical)
+
 if attacker_weapon_type == "sword":
-    attacker_might = attacker_attack
-    print(attacker_might)
+    defender_defense_power = defender_defense
 elif attacker_weapon_type == "lance":
-    attacker_might = attacker_attack
-    print(attacker_might)
+    defender_defense_power = defender_defense
 elif attacker_weapon_type == "axe":
-    attacker_might = attacker_attack
-    print(attacker_might)
+    defender_defense_power = defender_defense
 elif attacker_weapon_type == "bow":
-    attacker_might = attacker_attack
-    print(attacker_might)
+    defender_defense_power = defender_defense
 elif attacker_weapon_type == "beaststone":
-    attacker_might = attacker_attack
-    print(attacker_might)
+    defender_defense_power = defender_defense
 elif attacker_weapon_type == "dragonstone":
-    attacker_might = attacker_attack
-    print(attacker_might)
+    defender_defense_power = defender_defense
 elif attacker_weapon_type == "tome":
-    attacker_might = attacker_magic
-    print(attacker_might)
+    defender_defense_power = defender_resistance
