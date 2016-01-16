@@ -121,3 +121,13 @@ elif defender_speed >= attacker_speed + 5:
 else:
     attacker_attack_times = 1
     defender_attack_times = 1
+
+# Hit Rate
+
+attacker_hit_rate = attacker_weapon_hit + attacker_skill * 2 + attacker_luck / 2
+defender_hit_rate = defender_weapon_hit + defender_skill * 2 + defender_luck / 2
+
+# Evade
+
+attacker_evade = attacker_speed + attacker_luck / 2
+defender_evade = defender_speed + defender_luck / 2
