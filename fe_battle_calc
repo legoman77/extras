@@ -2,32 +2,32 @@
 
 import colors as c
 
-# Attacker's stats
+# attacker's stats
 
 print(c.clear)
 print("Welcome to the Fire Emblem Battle Calculator!")
 print("Please enter the attacker's stats.")
 attacker_name = input("Attacker's name > ")
-attacker_current_hp = input("Attacker's current HP > ")
-attacker_max_hp = input("Attacker's max HP > ")
-attacker_exp = input("Attacker's current EXP > ")
-attacker_level = input("Attacker's level > ")
-attacker_attack = input("Attacker's Attack > ")
-attacker_magic = input("Attacker's Magic > ")
-attacker_skill = input("Attacker's Skill > ")
-attacker_luck = input("Attacker's Luck > ")
-attacker_speed = input("Attacker's Speed > ")
-attacker_defense = input("Attacker's Defense > ")
-attacker_resistance = input("Attacker's Resistance > ")
+attacker_current_hp = int(input("Attacker's current HP > "))
+attacker_max_hp = int(input("Attacker's max HP > "))
+attacker_exp = int(input("Attacker's current EXP > "))
+attacker_level = int(input("Attacker's level > "))
+attacker_attack = int(input("Attacker's Attack > "))
+attacker_magic = int(input("Attacker's Magic > "))
+attacker_skill = int(input("Attacker's Skill > "))
+attacker_luck = int(input("Attacker's Luck > "))
+attacker_speed = int(input("Attacker's Speed > "))
+attacker_defense = int(input("Attacker's Defense > "))
+attacker_resistance = int(input("Attacker's Resistance > "))
 attacker_weapon_type = input("Attacker's weapon type > ")
-attacker_weapon_uses = input("Attacker's weapon's remaining uses > ")
-attacker_weapon_might = input("Attacker's weapon's Might > ")
-attacker_weapon_hit = input("Attacker's weapon's Hit % > ")
-attacker_weapon_crit = input("Attacker's weapon's Critical Rate > ")
+attacker_weapon_uses = int(input("Attacker's weapon's remaining uses > "))
+attacker_weapon_might = int(input("Attacker's weapon's Might > "))
+attacker_weapon_hit = int(input("Attacker's weapon's Hit % > "))
+attacker_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
 attacker_weapon_range = input("Attacker's weapon's Range > ")
 attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
 
-# Attacker's attack type (physical or magical)
+# attacker's attack type (physical or magical)
 
 if attacker_weapon_type == "sword":
     attacker_might = attacker_attack
@@ -48,22 +48,22 @@ elif attacker_weapon_type == "tome":
 
 print("Please enter the defender's stats.")
 defender_name = input("Defender's name > ")
-defender_current_hp = input("Defender's current HP > ")
-defender_max_hp = input("Defender's max HP > ")
-defender_exp = input("Defender's current EXP > ")
-defender_level = input("Defender's level > ")
-defender_attack = input("Defender's Attack > ")
-defender_magic = input("Defender's Magic > ")
-defender_skill = input("Defender's Skill > ")
-defender_luck = input("Defender's Luck > ")
-defender_speed = input("Defender's Speed > ")
-defender_defense = input("Defender's Defense > ")
-defender_resistance = input("Defender's Resistance > ")
+defender_current_hp = int(input("Defender's current HP > "))
+defender_max_hp = int(input("Defender's max HP > "))
+defender_exp = int(input("Defender's current EXP > "))
+defender_level = int(input("Defender's level > "))
+defender_attack = int(input("Defender's Attack > "))
+defender_magic = int(input("Defender's Magic > "))
+defender_skill = int(input("Defender's Skill > "))
+defender_luck = int(input("Defender's Luck > "))
+defender_speed = int(input("Defender's Speed > "))
+defender_defense = int(input("Defender's Defense > "))
+defender_resistance = int(input("Defender's Resistance > "))
 defender_weapon_type = input("Attacker's weapon type > ")
-defender_weapon_uses = input("Attacker's weapon's remaining uses > ")
-defender_weapon_might = input("Attacker's weapon's Might > ")
-defender_weapon_hit = input("Attacker's weapon's Hit % > ")
-defender_weapon_crit = input("Attacker's weapon's Critical Rate > ")
+defender_weapon_uses = int(input("Attacker's weapon's remaining uses > "))
+defender_weapon_might = int(input("Attacker's weapon's Might > "))
+defender_weapon_hit = int(input("Attacker's weapon's Hit % > "))
+defender_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
 defender_weapon_range = input("Attacker's weapon's Range > ")
 defender_weapon_effect = input("Attacker's weapon's added effect(s) > ")
 
@@ -110,18 +110,14 @@ elif attacker_weapon_type == "tome":
 
 # Battle Formulas
 
+# Number of Attacks
+
 if attacker_speed >= defender_speed + 5:
     attacker_attack_times = 2
     defender_attack_times = 1
-    print(attacker_attack_times)
-    print(defender_attack_times)
 elif defender_speed >= attacker_speed + 5:
     attacker_attack_times = 1
     defender_attack_times = 2
-    print(attacker_attack_times)
-    print(defender_attack_times)
 else:
     attacker_attack_times = 1
     defender_attack_times = 1
-    print(attacker_attack_times)
-    print(defender_attack_times)
