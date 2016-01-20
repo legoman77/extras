@@ -29,20 +29,8 @@ attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
 
 # attacker's attack type (physical or magical)
 
-if attacker_weapon_type == "sword":
-    attacker_might = attacker_attack
-elif attacker_weapon_type == "lance":
-    attacker_might = attacker_attack
-elif attacker_weapon_type == "axe":
-    attacker_might = attacker_attack
-elif attacker_weapon_type == "bow":
-    attacker_might = attacker_attack
-elif attacker_weapon_type == "beaststone":
-    attacker_might = attacker_attack
-elif attacker_weapon_type == "dragonstone":
-    attacker_might = attacker_attack
-elif attacker_weapon_type == "tome":
-    attacker_might = attacker_magic
+if attacker_weapon_type == "tome":
+    attacker_attack = attacker_magic
 
 # Defender's stats
 
@@ -124,10 +112,19 @@ else:
 
 # Hit Rate
 
-attacker_hit_rate = attacker_weapon_hit + attacker_skill * 2 + attacker_luck / 2
-defender_hit_rate = defender_weapon_hit + defender_skill * 2 + defender_luck / 2
+attacker_hit_rate = attacker_weapon_hit + attacker_skill * 2 + int(attacker_luck / 2)
+defender_hit_rate = defender_weapon_hit + defender_skill * 2 + int(defender_luck / 2)
 
 # Evade
 
-attacker_evade = attacker_speed + attacker_luck / 2
-defender_evade = defender_speed + defender_luck / 2
+attacker_evade = attacker_speed + int(attacker_luck / 2)
+defender_evade = defender_speed + int(defender_luck / 2)
+
+# Accuracy
+
+attacker_accuracy = attacker_hit_rate - defender_evade
+defender_accuracy = defender_hit_rate - defender_evade
+
+# Attack Power
+
+attacker_attack_power =
