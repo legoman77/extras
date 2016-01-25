@@ -47,54 +47,24 @@ defender_luck = int(input("Defender's Luck > "))
 defender_speed = int(input("Defender's Speed > "))
 defender_defense = int(input("Defender's Defense > "))
 defender_resistance = int(input("Defender's Resistance > "))
-defender_weapon_type = input("Attacker's weapon type > ")
-defender_weapon_uses = int(input("Attacker's weapon's remaining uses > "))
-defender_weapon_might = int(input("Attacker's weapon's Might > "))
-defender_weapon_hit = int(input("Attacker's weapon's Hit % > "))
-defender_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
-defender_weapon_range = input("Attacker's weapon's Range > ")
-defender_weapon_effect = input("Attacker's weapon's added effect(s) > ")
+defender_weapon_type = input("Defender's weapon type > ")
+defender_weapon_uses = int(input("Defender's weapon's remaining uses > "))
+defender_weapon_might = int(input("Defender's weapon's Might > "))
+defender_weapon_hit = int(input("Defender's weapon's Hit % > "))
+defender_weapon_crit = int(input("Defender's weapon's Critical Rate > "))
+defender_weapon_range = input("Defender's weapon's Range > ")
+defender_weapon_effect = input("Defender's weapon's added effect(s) > ")
 
 # Defender's attack type (physical or magical) and attacker's defense type (physical or magical)
 
-if defender_weapon_type == "sword":
-    defender_might = defender_attack
-    attacker_defense_power = attacker_defense
-elif defender_weapon_type == "lance":
-    defender_might = defender_attack
-    attacker_defense_power = attacker_defense
-elif defender_weapon_type == "axe":
-    defender_might = defender_attack
-    attacker_defense_power = attacker_defense
-elif defender_weapon_type == "bow":
-    defender_might = defender_attack
-    attacker_defense_power = attacker_defense
-elif defender_weapon_type == "beaststone":
-    defender_might = defender_attack
-    attacker_defense_power = attacker_defense
-elif defender_weapon_type == "dragonstone":
-    defender_might = defender_attack
-    attacker_defense_power = attacker_defense
-elif defender_weapon_type == "tome":
-    defender_might = defender_magic
-    attacker_defense_power = attacker_resistance
+if defender_weapon_type == "tome":
+    defender_attack = defender_magic
+    attacker_defense = attacker_resistance
 
 # Defender's defense type (physical or magical)
 
-if attacker_weapon_type == "sword":
-    defender_defense_power = defender_defense
-elif attacker_weapon_type == "lance":
-    defender_defense_power = defender_defense
-elif attacker_weapon_type == "axe":
-    defender_defense_power = defender_defense
-elif attacker_weapon_type == "bow":
-    defender_defense_power = defender_defense
-elif attacker_weapon_type == "beaststone":
-    defender_defense_power = defender_defense
-elif attacker_weapon_type == "dragonstone":
-    defender_defense_power = defender_defense
-elif attacker_weapon_type == "tome":
-    defender_defense_power = defender_resistance
+if attacker_weapon_type == "tome":
+    defender_defense = defender_resistance
 
 # Battle Formulas
 
@@ -127,4 +97,10 @@ defender_accuracy = defender_hit_rate - defender_evade
 
 # Attack Power
 
-attacker_attack_power =
+attacker_attack_power = attacker_attack + attacker_weapon_might
+defender_attack_power = defender_attack + defender_weapon_might
+
+# Defense Power
+
+attacker_defense_power = attacker_defense
+defender_defense_power = defender_defense
