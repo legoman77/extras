@@ -104,3 +104,7 @@ defender_attack_power = defender_attack + defender_weapon_might
 
 attacker_defense_power = attacker_defense
 defender_defense_power = defender_defense
+
+# Damage
+
+attacker_damage = attacker_attack - defender_defense
