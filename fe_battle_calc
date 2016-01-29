@@ -2,7 +2,7 @@
 
 import colors as c
 
-# attacker's stats
+# Attacker's stats
 
 print(c.clear)
 print("Welcome to the Fire Emblem Battle Calculator!")
@@ -27,7 +27,7 @@ attacker_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
 attacker_weapon_range = input("Attacker's weapon's Range > ")
 attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
 
-# attacker's attack type (physical or magical)
+# Attacker's attack type (physical or magical)
 
 if attacker_weapon_type == "tome":
     attacker_attack = attacker_magic
@@ -107,4 +107,41 @@ defender_defense_power = defender_defense
 
 # Damage
 
-attacker_damage = attacker_attack - defender_defense
+attacker_damage = attacker_attack_power - defender_defense_power
+defender_damage = defender_attack_power - attacker_defense_power
+
+# Critical Rate
+
+attacker_crit_rate = attacker_weapon_crit + int(attacker_skill / 2)
+defender_crit_rate = defender_weapon_crit + int(defender_skill / 2)
+
+# Critical Evade
+
+attacker_crit_evade = attacker_luck
+defender_crit_evade = defender_luck
+
+# Critical Chance
+
+attacker_crit_chance = attacker_crit_rate - defender_crit_evade
+defender_crit_chance = defender_crit_rate - attacker_crit_evade
+
+# Battle Preview
+
+print(c.clear)
+print("Battle Preview:")
+print(attacker_name + ":")
+print("Damage: " + str(attacker_damage) + " x" + str(attacker_attack_times))
+print("Accuracy: " + str(attacker_accuracy) + "%")
+print("Crit: " + str(attacker_crit_chance) + "%")
+print(defender_name + ":")
+print("Damage: " + str(defender_damage) + " x" + str(defender_attack_times))
+print("Accuracy: " + str(defender_accuracy) + "%")
+print("Crit: " + str(defender_crit_chance) + "%")
+
+# Battle
+
+battle_ready = input("Initiate the battle? > ")
+if battle_ready == "yes":
+    print("Cool")
+else:
+    exit
