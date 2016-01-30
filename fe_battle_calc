@@ -204,6 +204,8 @@ if battle_ready == "yes":
 
             # Defender gets a crit
 
-            if defender_crit_roll <= defender_crit_
+            if defender_crit_roll <= defender_crit_chance:
+                print(defender_name + " got a critical hit!")
+                defender_hit_roll = random.randint(1,100)
 else:
     exit
