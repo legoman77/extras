@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import colors as c
+import random
 
 # Attacker's stats
 
@@ -12,11 +13,11 @@ attacker_current_hp = int(input("Attacker's current HP > "))
 attacker_max_hp = int(input("Attacker's max HP > "))
 attacker_exp = int(input("Attacker's current EXP > "))
 attacker_level = int(input("Attacker's level > "))
-attacker_attack = int(input("Attacker's Attack > "))
+attacker_strength = int(input("Attacker's Strength > "))
 attacker_magic = int(input("Attacker's Magic > "))
 attacker_skill = int(input("Attacker's Skill > "))
-attacker_luck = int(input("Attacker's Luck > "))
 attacker_speed = int(input("Attacker's Speed > "))
+attacker_luck = int(input("Attacker's Luck > "))
 attacker_defense = int(input("Attacker's Defense > "))
 attacker_resistance = int(input("Attacker's Resistance > "))
 attacker_weapon_type = input("Attacker's weapon type > ")
@@ -30,7 +31,7 @@ attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
 # Attacker's attack type (physical or magical)
 
 if attacker_weapon_type == "tome":
-    attacker_attack = attacker_magic
+    attacker_strength = attacker_magic
 
 # Defender's stats
 
@@ -40,11 +41,11 @@ defender_current_hp = int(input("Defender's current HP > "))
 defender_max_hp = int(input("Defender's max HP > "))
 defender_exp = int(input("Defender's current EXP > "))
 defender_level = int(input("Defender's level > "))
-defender_attack = int(input("Defender's Attack > "))
+defender_strength = int(input("Defender's Strength > "))
 defender_magic = int(input("Defender's Magic > "))
 defender_skill = int(input("Defender's Skill > "))
-defender_luck = int(input("Defender's Luck > "))
 defender_speed = int(input("Defender's Speed > "))
+defender_luck = int(input("Defender's Luck > "))
 defender_defense = int(input("Defender's Defense > "))
 defender_resistance = int(input("Defender's Resistance > "))
 defender_weapon_type = input("Defender's weapon type > ")
@@ -58,7 +59,7 @@ defender_weapon_effect = input("Defender's weapon's added effect(s) > ")
 # Defender's attack type (physical or magical) and attacker's defense type (physical or magical)
 
 if defender_weapon_type == "tome":
-    defender_attack = defender_magic
+    defender_strength = defender_magic
     attacker_defense = attacker_resistance
 
 # Defender's defense type (physical or magical)
@@ -97,8 +98,8 @@ defender_accuracy = defender_hit_rate - defender_evade
 
 # Attack Power
 
-attacker_attack_power = attacker_attack + attacker_weapon_might
-defender_attack_power = defender_attack + defender_weapon_might
+attacker_attack_power = attacker_strength + attacker_weapon_might
+defender_attack_power = defender_strength + defender_weapon_might
 
 # Defense Power
 
@@ -125,16 +126,21 @@ defender_crit_evade = defender_luck
 attacker_crit_chance = attacker_crit_rate - defender_crit_evade
 defender_crit_chance = defender_crit_rate - attacker_crit_evade
 
+# Critical Damage
+
+attacker_crit_damage = attacker_damage * 3
+defender_crit_damage = defender_damage * 3
+
 # Battle Preview
 
 print(c.clear)
 print("Battle Preview:")
 print(attacker_name + ":")
-print("Damage: " + str(attacker_damage) + " x" + str(attacker_attack_times))
+print("Damage: " + str(attacker_damage) + "x" + str(attacker_attack_times))
 print("Accuracy: " + str(attacker_accuracy) + "%")
 print("Crit: " + str(attacker_crit_chance) + "%")
 print(defender_name + ":")
-print("Damage: " + str(defender_damage) + " x" + str(defender_attack_times))
+print("Damage: " + str(defender_damage) + "x" + str(defender_attack_times))
 print("Accuracy: " + str(defender_accuracy) + "%")
 print("Crit: " + str(defender_crit_chance) + "%")
 
@@ -142,6 +148,62 @@ print("Crit: " + str(defender_crit_chance) + "%")
 
 battle_ready = input("Initiate the battle? > ")
 if battle_ready == "yes":
-    print("Cool")
+
+# Attacker and defender attack once
+
+    # Attacker's attack
+
+    if attacker_attack_times == 1 and defender_attack_times == 1:
+        
+        # Attacker's crit roll
+
+        attacker_crit_roll = random.randint(1,100)
+
+        # Attacker gets a crit
+
+        if attacker_crit_roll <= attacker_crit_chance:
+            print(attacker_name + " got a critical hit!")
+            attacker_hit_roll = random.randint(1,100)
+            
+            # Attacker hits crit
+
+            if attacker_hit_roll <= attacker_accuracy:
+                defender_current_hp = defender_current_hp - attacker_crit_damage
+                print(defender_name + " took " + str(attacker_crit_damage) + " damage!")
+                print(str(defender_current_hp))
+            
+            # Attacker misses crit
+
+            else:
+                print(attacker_name + " missed!")
+        
+        # Attacker doesn't get a crit
+
+        else:
+            attacker_hit_roll = random.randint(1,100)
+            
+            # Attacker hits
+
+            if attacker_hit_roll <= attacker_accuracy:
+                defender_current_hp = defender_current_hp - attacker_damage
+                print(attacker_name + " attacks!")
+                print(defender_name + " took " + str(attacker_damage) + " damage!")
+            
+            # Attacker misses
+
+            else:
+                print(attacker_name + " missed!")
+
+        # Defender's attack
+
+        if defender_current_hp > 0:
+            
+            # Defender's crit roll
+
+            defender_crit_roll = random.randint(1,100)
+
+            # Defender gets a crit
+
+            if defender_crit_roll <= defender_crit_
 else:
     exit
