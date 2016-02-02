@@ -218,5 +218,16 @@ if battle_ready == "yes":
                 else:
                     print(defender_name + " missed!")
 
+            # Defender doesn't get a crit
+
+            else:
+                defender_hit_roll = random.randint(1,100)
+
+                # Defender hits attack
+
+                if defender_hit_roll <= defender_accuracy:
+                    attacker_current_hp = attacker_current_hp - defender_damage
+                    print(defender_name + " attacks!")
+
 else:
     exit
