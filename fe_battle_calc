@@ -148,6 +148,7 @@ print("Crit: " + str(defender_crit_chance) + "%")
 
 battle_ready = input("Initiate the battle? > ")
 if battle_ready == "yes":
+    print(c.clear)
 
 # Attacker and defender attack once
 
@@ -228,6 +229,23 @@ if battle_ready == "yes":
                 if defender_hit_roll <= defender_accuracy:
                     attacker_current_hp = attacker_current_hp - defender_damage
                     print(defender_name + " attacks!")
+                    print(attacker_name + " took " + defender_damage + " damage!")
 
+                # Defender misses attack
+
+                else:
+                    print(defender_name + " missed!")
+        
+        # Defender is dead
+        
+        else:
+            print(defender_name + " has died.")
+            print(attacker_name + " wins!")
+
+        # Attacker is dead
+
+        if attacker_current_hp <= 0:
+            print(attacker_name + " has died.")
+            print(defender_name + " wins!")
 else:
     exit
