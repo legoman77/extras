@@ -35,6 +35,7 @@ if attacker_weapon_type == "tome":
 
 # Defender's stats
 
+print(c.clear)
 print("Please enter the defender's stats.")
 defender_name = input("Defender's name > ")
 defender_current_hp = int(input("Defender's current HP > "))
