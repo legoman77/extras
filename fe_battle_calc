@@ -171,7 +171,10 @@ if battle_ready == "yes":
 
             if attacker_hit_roll <= attacker_accuracy:
                 defender_current_hp = defender_current_hp - attacker_crit_damage
+                attacker_weapon_uses -= 1
                 print(defender_name + " took " + str(attacker_crit_damage) + " damage!")
+                if attacker_weapon_uses <= 0:
+                    print(attacker_name + "'s weapon broke!")
             
             # Attacker misses crit
 
@@ -189,6 +192,9 @@ if battle_ready == "yes":
                 defender_current_hp = defender_current_hp - attacker_damage
                 print(attacker_name + " attacks!")
                 print(defender_name + " took " + str(attacker_damage) + " damage!")
+                attacker_weapon_uses -= 1
+                if attacker_weapon_uses <= 0:
+                    print(attacker_name + "'s weapon broke!")
             
             # Attacker misses
 
@@ -214,6 +220,9 @@ if battle_ready == "yes":
                 if defender_hit_roll <= defender_accuracy:
                     attacker_current_hp = attacker_current_hp - defender_crit_damage
                     print(attacker_name + " took " + str(defender_crit_damage) + " damage!")
+                    defender_weapon_uses -= 1
+                    if defender_weapon_uses <= 0:
+                        print(defender_name + "'s weapon broke!")
 
                 # Defender misses crit
 
@@ -230,7 +239,10 @@ if battle_ready == "yes":
                 if defender_hit_roll <= defender_accuracy:
                     attacker_current_hp = attacker_current_hp - defender_damage
                     print(defender_name + " attacks!")
-                    print(attacker_name + " took " + defender_damage + " damage!")
+                    print(attacker_name + " took " + str(defender_damage) + " damage!")
+                    defender_weapon_uses -= 1
+                    if defender_weapon_uses <= 0:
+                        print(defender_name + "'s weapon broke!")
 
                 # Defender misses attack
 
@@ -248,5 +260,18 @@ if battle_ready == "yes":
         if attacker_current_hp <= 0:
             print(attacker_name + " has died.")
             print(defender_name + " wins!")
+
+        # Combatants' remaining HP
+
+        if attacker_current_hp > 0 and defender_current_hp > 0:
+            print(attacker_name + " has " + str(attacker_current_hp) + " HP remaining.")
+            print(defender_name + " has " + str(defender_current_hp) + " HP remaining.")
+        
+        # Attacker's weapon's remaining uses
+
+        if attacker_weapon_uses > 0:
+            print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " uses remaining.")
+
+
 else:
     exit
