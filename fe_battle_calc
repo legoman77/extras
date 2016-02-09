@@ -151,7 +151,7 @@ battle_ready = input("Initiate the battle? > ")
 if battle_ready == "yes":
     print(c.clear)
 
-# Attacker and defender attack once
+    # Attacker and defender attack once
 
     # Attacker's attack
 
@@ -245,7 +245,7 @@ if battle_ready == "yes":
                         print(defender_name + "'s weapon broke!")
 
                 # Defender misses attack
-(
+                
                 else:
                     print(defender_name + " missed!")
         
@@ -280,7 +280,5 @@ if battle_ready == "yes":
             if defender_weapon_uses > 1:    
                 print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " uses remaining.")
             else:
-                print(defender_name + "'s weapon has " + str(defender_weapon_uses + " use remaining.")
+                print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " use remaining.")
 
-else:
-    exit
