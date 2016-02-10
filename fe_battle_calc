@@ -269,16 +269,16 @@ if battle_ready == "yes":
         
         # Attacker's weapon's remaining uses
 
-        if attacker_weapon_uses > 0:
-            if attacker_weapon_uses > 1:
-                print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " uses remaining.")
-            else: 
-                print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " use remaining.")
+            if attacker_weapon_uses > 0:
+                if attacker_weapon_uses > 1:
+                    print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " uses remaining.")
+                else: 
+                    print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " use remaining.")
         
         
-        if defender_weapon_uses > 0:
-            if defender_weapon_uses > 1:    
-                print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " uses remaining.")
-            else:
-                print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " use remaining.")
+            if defender_weapon_uses > 0:
+                if defender_weapon_uses > 1:    
+                    print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " uses remaining.")
+                else:
+                    print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " use remaining.")
 
