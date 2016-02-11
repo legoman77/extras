@@ -281,4 +281,8 @@ if battle_ready == "yes":
                     print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " uses remaining.")
                 else:
                     print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " use remaining.")
+        # Experience Points
+
+        # Attacker
+
 
