@@ -9,6 +9,7 @@ print(c.clear)
 print("Welcome to the Fire Emblem Battle Calculator!")
 print("Please enter the attacker's stats.")
 attacker_name = input("Attacker's name > ")
+attacker_boss = input("Is this unit a boss? > ")
 attacker_class = input("Attacker's class > ")
 attacker_current_hp = int(input("Attacker's current HP > "))
 attacker_max_hp = int(input("Attacker's max HP > "))
@@ -39,6 +40,7 @@ if attacker_weapon_type == "tome":
 print(c.clear)
 print("Please enter the defender's stats.")
 defender_name = input("Defender's name > ")
+defender_boss = input("Is this unit a boss? > ")
 defender_class = input("Defender's class > ")
 defender_current_hp = int(input("Defender's current HP > "))
 defender_max_hp = int(input("Defender's max HP > "))
@@ -69,6 +71,17 @@ if defender_weapon_type == "tome":
 
 if attacker_weapon_type == "tome":
     defender_defense = defender_resistance
+
+# Attacker's experience-related formulas
+
+    # Class Power
+
+if attacker_class == "Cleric" or attacker_class == "Soldier" or attacker_class == "Troubadour" or attacker_class == "Thief" or attacker_class == "Dancer":
+    attacker_class_power = 2
+    print(attacker_class_power)
+else:
+    attacker_class_power = 3
+    print(attacker_class_power)
 
 # Battle Formulas
 
@@ -136,7 +149,6 @@ defender_crit_damage = defender_damage * 3
 
 # Battle Preview
 
-print(c.clear)
 print("Battle Preview:")
 print(attacker_name + ":")
 print("Damage: " + str(attacker_damage) + "x" + str(attacker_attack_times))
@@ -273,7 +285,7 @@ if battle_ready == "yes":
         
         # Attacker's weapon's remaining uses
 
-        if attacker_weapon_uses > 1 or defender_weapon_uses < 1:
+        if attacker_weapon_uses > 1 or attacker_weapon_uses < 1:
             print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " uses remaining.")
         else: 
             print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " use remaining.")
@@ -291,7 +303,7 @@ if battle_ready == "yes":
 
         if attacker_current_hp > 0:
             if attacker_hit_roll <= attacker_accuracy:
-                pass    
+                pass
             else:
                 print(attacker_name + " gained 0 experience points.")
 
