@@ -9,6 +9,7 @@ print(c.clear)
 print("Welcome to the Fire Emblem Battle Calculator!")
 print("Please enter the attacker's stats.")
 attacker_name = input("Attacker's name > ")
+attacker_class = input("Attacker's class > ")
 attacker_current_hp = int(input("Attacker's current HP > "))
 attacker_max_hp = int(input("Attacker's max HP > "))
 attacker_exp = int(input("Attacker's current EXP > "))
@@ -38,6 +39,7 @@ if attacker_weapon_type == "tome":
 print(c.clear)
 print("Please enter the defender's stats.")
 defender_name = input("Defender's name > ")
+defender_class = input("Defender's class > ")
 defender_current_hp = int(input("Defender's current HP > "))
 defender_max_hp = int(input("Defender's max HP > "))
 defender_exp = int(input("Defender's current EXP > "))
@@ -261,28 +263,35 @@ if battle_ready == "yes":
             print(attacker_name + " has died.")
             print(defender_name + " wins!")
 
-        # Combatants' remaining HP
+        # Attacker's remaining HP
 
-        if attacker_current_hp > 0 and defender_current_hp > 0:
-            print(attacker_name + " has " + str(attacker_current_hp) + " HP remaining.")
-            print(defender_name + " has " + str(defender_current_hp) + " HP remaining.")
+        print(attacker_name + " has " + str(attacker_current_hp) + " HP remaining.")
+        
+        # Defender's remaining HP
+        
+        print(defender_name + " has " + str(defender_current_hp) + " HP remaining.")
         
         # Attacker's weapon's remaining uses
 
-            if attacker_weapon_uses > 0:
-                if attacker_weapon_uses > 1:
-                    print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " uses remaining.")
-                else: 
-                    print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " use remaining.")
+        if attacker_weapon_uses > 1 or defender_weapon_uses < 1:
+            print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " uses remaining.")
+        else: 
+            print(attacker_name + "'s weapon has " + str(attacker_weapon_uses) + " use remaining.")
         
+        # Defender's weapon's remaining uses
+
+        if defender_weapon_uses > 1 or defender_weapon_uses < 1:    
+            print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " uses remaining.")
+        else:
+            print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " use remaining.")
         
-            if defender_weapon_uses > 0:
-                if defender_weapon_uses > 1:    
-                    print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " uses remaining.")
-                else:
-                    print(defender_name + "'s weapon has " + str(defender_weapon_uses) + " use remaining.")
         # Experience Points
 
         # Attacker
 
+        if attacker_current_hp > 0:
+            if attacker_hit_roll <= attacker_accuracy:
+                pass    
+            else:
+                print(attacker_name + " gained 0 experience points.")
 
