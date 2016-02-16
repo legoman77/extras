@@ -83,6 +83,9 @@ else:
     attacker_class_power = 3
     print(attacker_class_power)
 
+    # Class Bonus A
+
+if attacker_class == 
 # Battle Formulas
 
 # Number of Attacks
