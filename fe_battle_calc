@@ -76,16 +76,20 @@ if attacker_weapon_type == "tome":
 
     # Class Power
 
-if attacker_class == "Cleric" or attacker_class == "Soldier" or attacker_class == "Troubadour" or attacker_class == "Thief" or attacker_class == "Dancer":
+if attacker_class == "Cleric" or attacker_class == "Priest" or attacker_class == "Soldier" or attacker_class == "Troubadour" or attacker_class == "Thief" or attacker_class == "Dancer":
     attacker_class_power = 2
-    print(attacker_class_power)
+elif attacker_class == "Grima":
+    attacker_class_power = 5
 else:
     attacker_class_power = 3
-    print(attacker_class_power)
 
     # Class Bonus A
 
-if attacker_class == 
+if attacker_class == "Great Lord" or attacker_class == "Grandmaster" or attacker_class == "Paladin" or attacker_class == "General" or attacker_class == "Great Knight" or attacker_class == "Swordmaster" or attacker_class == "Trickster" or attacker_class == "Assassin" or attacker_class == "Berserker" or attacker_class == "Warrior" or attacker_class == "Hero" or attacker_class == "Sniper" or attacker_class == "Bow Knight" or attacker_class == "Sorcerer" or attacker_class == "Sage" or attacker_class == "Dark Knight" or attacker_class == "War Cleric" or attacker_class == "War Monk" or attacker_class == "Valkyrie" or attacker_class == "Falcon Knight" or attacker_class == "Dark Flier" or attacker_class == "Wyvern Lord" or attacker_class == "Griffon Rider" or attacker_class == "Entombed":
+    attacker_class_bonus_a = 20
+else:
+    attacker_class_bonus_a = 0
+
 # Battle Formulas
 
 # Number of Attacks
