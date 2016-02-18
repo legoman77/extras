@@ -90,6 +90,18 @@ if attacker_class == "Great Lord" or attacker_class == "Grandmaster" or attacker
 else:
     attacker_class_bonus_a = 0
 
+    # Class Bonus B
+
+if attacker_class == "Assassin" or attacker_class == "War Cleric" or attacker_class == "Valkyrie":
+    attacker_class_bonus_b = 40
+    print(attacker_class_bonus_b)
+elif attacker_class == "Great Lord" or attacker_class == "Grandmaster" or attacker_class == "Paladin" or attacker_class == "General" or attacker_class == "Great Knight" or attacker_class == "Swordmaster" or attacker_class == "Trickster" or attacker_class == "Berserker" or attacker_class == "Warrior" or attacker_class == "Hero" or attacker_class == "Sniper" or attacker_class == "Bow Knight" or attacker_class == "Sorcerer" or attacker_class == "Sage" or attacker_class == "Dark Knight" or attacker_class == "War Monk" or attacker_class == "Valkyrie" or attacker_class == "Falcon Knight" or attacker_class == "Dark Flier" or attacker_class == "Wyvern Lord" or attacker_class == "Griffon Rider" or attacker_class == "Entombed":
+    attacker_class_bonus_b = 60
+    print(attacker_class_bonus_b)
+else:
+    attacker_class_bonus_b = 0
+    print(attacker_class_bonus_b)
+
 # Battle Formulas
 
 # Number of Attacks
