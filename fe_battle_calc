@@ -76,40 +76,83 @@ if attacker_weapon_type == "tome":
 
     # Class Power
 
-if attacker_class == "cleric" or attacker_class == "priest" or attacker_class == "Soldier" or attacker_class == "Troubadour" or attacker_class == "Thief" or attacker_class == "Dancer":
+if attacker_class == "cleric" or attacker_class == "priest" or attacker_class == "soldier" or attacker_class == "troubadour" or attacker_class == "thief" or attacker_class == "dancer":
     attacker_class_power = 2
-elif attacker_class == "Grima":
+elif attacker_class == "grima":
     attacker_class_power = 5
 else:
     attacker_class_power = 3
 
     # Class Bonus A
 
-if attacker_class == "Great Lord" or attacker_class == "Grandmaster" or attacker_class == "Paladin" or attacker_class == "General" or attacker_class == "Great Knight" or attacker_class == "Swordmaster" or attacker_class == "Trickster" or attacker_class == "Assassin" or attacker_class == "Berserker" or attacker_class == "Warrior" or attacker_class == "Hero" or attacker_class == "Sniper" or attacker_class == "Bow Knight" or attacker_class == "Sorcerer" or attacker_class == "Sage" or attacker_class == "Dark Knight" or attacker_class == "War Cleric" or attacker_class == "War Monk" or attacker_class == "Valkyrie" or attacker_class == "Falcon Knight" or attacker_class == "Dark Flier" or attacker_class == "Wyvern Lord" or attacker_class == "Griffon Rider" or attacker_class == "Entombed":
+if attacker_class == "great lord" or attacker_class == "grandmaster" or attacker_class == "paladin" or attacker_class == "general" or attacker_class == "great knight" or attacker_class == "swordmaster" or attacker_class == "trickster" or attacker_class == "assassin" or attacker_class == "berserker" or attacker_class == "warrior" or attacker_class == "hero" or attacker_class == "sniper" or attacker_class == "bow knight" or attacker_class == "sorcerer" or attacker_class == "sage" or attacker_class == "dark knight" or attacker_class == "war cleric" or attacker_class == "war monk" or attacker_class == "valkyrie" or attacker_class == "falcon knight" or attacker_class == "dark flier" or attacker_class == "wyvern lord" or attacker_class == "griffon rider" or attacker_class == "entombed":
     attacker_class_bonus_a = 20
 else:
     attacker_class_bonus_a = 0
 
     # Class Bonus B
 
-if attacker_class == "Assassin" or attacker_class == "War Cleric" or attacker_class == "Valkyrie":
+if attacker_class == "assassin" or attacker_class == "war cleric" or attacker_class == "valkyrie":
     attacker_class_bonus_b = 40
-    print(attacker_class_bonus_b)
-elif attacker_class == "Great Lord" or attacker_class == "Grandmaster" or attacker_class == "Paladin" or attacker_class == "General" or attacker_class == "Great Knight" or attacker_class == "Swordmaster" or attacker_class == "Trickster" or attacker_class == "Berserker" or attacker_class == "Warrior" or attacker_class == "Hero" or attacker_class == "Sniper" or attacker_class == "Bow Knight" or attacker_class == "Sorcerer" or attacker_class == "Sage" or attacker_class == "Dark Knight" or attacker_class == "War Monk" or attacker_class == "Valkyrie" or attacker_class == "Falcon Knight" or attacker_class == "Dark Flier" or attacker_class == "Wyvern Lord" or attacker_class == "Griffon Rider" or attacker_class == "Entombed":
+elif attacker_class == "great lord" or attacker_class == "grandmaster" or attacker_class == "paladin" or attacker_class == "general" or attacker_class == "great knight" or attacker_class == "swordmaster" or attacker_class == "trickster" or attacker_class == "berserker" or attacker_class == "warrior" or attacker_class == "hero" or attacker_class == "sniper" or attacker_class == "bow knight" or attacker_class == "sorcerer" or attacker_class == "sage" or attacker_class == "dark knight" or attacker_class == "war monk" or attacker_class == "valkyrie" or attacker_class == "falcon knight" or attacker_class == "dark flier" or attacker_class == "wyvern lord" or attacker_class == "griffon rider" or attacker_class == "entombed":
     attacker_class_bonus_b = 60
-    print(attacker_class_bonus_b)
 else:
     attacker_class_bonus_b = 0
-    print(attacker_class_bonus_b)
 
     # Boss Bonus
 
-if attacker_boss == "Yes":
+if attacker_boss == "yes":
     attacker_boss_bonus = 40
-    print(attacker_boss_bonus)
 else:
     attacker_boss_bonus = 0
-    print(attacker_boss_bonus)
+
+    # Thief Bonus
+
+if attacker_class == "thief" or attacker_class == "assassin":
+    attacker_thief_bonus = 20
+else:
+    attacker_thief_bonus = 0
+
+# Defender's experience-related formulas
+
+    # Class Power
+
+if defender_class == "cleric" or defender_class == "priest" or defender_class == "soldier" or defender_class == "troubadour" or defender_class == "thief" or defender_class == "dancer":
+    defender_class_power = 2
+elif defender_class == "grima":
+    defender_class_power = 5
+else:
+    defender_class_power = 3
+
+    # Class Bonus A
+
+if defender_class == "great lord" or defender_class == "grandmaster" or defender_class == "paladin" or defender_class == "general" or defender_class == "great knight" or defender_class == "swordmaster" or defender_class == "trickster" or defender_class == "assassin" or defender_class == "berserker" or defender_class == "warrior" or defender_class == "hero" or defender_class == "sniper" or defender_class == "bow knight" or defender_class == "sorcerer" or defender_class == "sage" or defender_class == "dark knight" or defender_class == "war cleric" or defender_class == "war monk" or defender_class == "valkyrie" or defender_class == "falcon knight" or defender_class == "dark flier" or defender_class == "wyvern lord" or defender_class == "griffon rider" or defender_class == "entombed":
+    defender_class_bonus_a = 20
+else:
+    defender_class_bonus_a = 0
+
+    # Class Bonus B
+
+if defender_class == "assassin" or defender_class == "war cleric" or defender_class == "valkyrie":
+    defender_class_bonus_b = 40
+elif defender_class == "great lord" or defender_class == "grandmaster" or defender_class == "paladin" or defender_class == "general" or defender_class == "great knight" or defender_class == "swordmaster" or defender_class == "trickster" or defender_class == "berserker" or defender_class == "warrior" or defender_class == "hero" or defender_class == "sniper" or defender_class == "bow knight" or defender_class == "sorcerer" or defender_class == "sage" or defender_class == "dark knight" or defender_class == "war monk" or defender_class == "valkyrie" or defender_class == "falcon knight" or defender_class == "dark flier" or defender_class == "wyvern lord" or defender_class == "griffon rider" or defender_class == "entombed":
+    defender_class_bonus_b = 60
+else:
+    defender_class_bonus_b = 0
+
+    # Boss Bonus
+
+if defender_boss == "yes":
+    defender_boss_bonus = 40
+else:
+    defender_boss_bonus = 0
+
+    # Thief Bonus
+
+if defender_class == "thief" or defender_class == "assassin":
+    defender_thief_bonus = 20
+else:
+    defender_thief_bonus = 0
 
 # Battle Formulas
 
@@ -331,7 +374,8 @@ if battle_ready == "yes":
 
         if attacker_current_hp > 0:
             if attacker_hit_roll <= attacker_accuracy:
-                pass
+                if defender_current_hp > 0:
+                    attacker_exp_gained = 31 + ((defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power
             else:
                 print(attacker_name + " gained 0 experience points.")
 
