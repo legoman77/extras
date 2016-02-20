@@ -9,8 +9,8 @@ print(c.clear)
 print("Welcome to the Fire Emblem Battle Calculator!")
 print("Please enter the attacker's stats.")
 attacker_name = input("Attacker's name > ")
-attacker_boss = input("Is this unit a boss? > ")
-attacker_class = input("Attacker's class > ")
+attacker_boss = input("Is this unit a boss? > ").lower()
+attacker_class = input("Attacker's class > ").lower()
 attacker_current_hp = int(input("Attacker's current HP > "))
 attacker_max_hp = int(input("Attacker's max HP > "))
 attacker_exp = int(input("Attacker's current EXP > "))
@@ -22,13 +22,13 @@ attacker_speed = int(input("Attacker's Speed > "))
 attacker_luck = int(input("Attacker's Luck > "))
 attacker_defense = int(input("Attacker's Defense > "))
 attacker_resistance = int(input("Attacker's Resistance > "))
-attacker_weapon_type = input("Attacker's weapon type > ")
+attacker_weapon_type = input("Attacker's weapon type > ").lower()
 attacker_weapon_uses = int(input("Attacker's weapon's remaining uses > "))
 attacker_weapon_might = int(input("Attacker's weapon's Might > "))
 attacker_weapon_hit = int(input("Attacker's weapon's Hit % > "))
 attacker_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
 attacker_weapon_range = input("Attacker's weapon's Range > ")
-attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ")
+attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ").lower()
 
 # Attacker's attack type (physical or magical)
 
@@ -40,8 +40,8 @@ if attacker_weapon_type == "tome":
 print(c.clear)
 print("Please enter the defender's stats.")
 defender_name = input("Defender's name > ")
-defender_boss = input("Is this unit a boss? > ")
-defender_class = input("Defender's class > ")
+defender_boss = input("Is this unit a boss? > ").lower()
+defender_class = input("Defender's class > ").lower()
 defender_current_hp = int(input("Defender's current HP > "))
 defender_max_hp = int(input("Defender's max HP > "))
 defender_exp = int(input("Defender's current EXP > "))
@@ -53,13 +53,13 @@ defender_speed = int(input("Defender's Speed > "))
 defender_luck = int(input("Defender's Luck > "))
 defender_defense = int(input("Defender's Defense > "))
 defender_resistance = int(input("Defender's Resistance > "))
-defender_weapon_type = input("Defender's weapon type > ")
+defender_weapon_type = input("Defender's weapon type > ").lower()
 defender_weapon_uses = int(input("Defender's weapon's remaining uses > "))
 defender_weapon_might = int(input("Defender's weapon's Might > "))
 defender_weapon_hit = int(input("Defender's weapon's Hit % > "))
 defender_weapon_crit = int(input("Defender's weapon's Critical Rate > "))
 defender_weapon_range = input("Defender's weapon's Range > ")
-defender_weapon_effect = input("Defender's weapon's added effect(s) > ")
+defender_weapon_effect = input("Defender's weapon's added effect(s) > ").lower()
 
 # Defender's attack type (physical or magical) and attacker's defense type (physical or magical)
 
@@ -76,7 +76,7 @@ if attacker_weapon_type == "tome":
 
     # Class Power
 
-if attacker_class == "Cleric" or attacker_class == "Priest" or attacker_class == "Soldier" or attacker_class == "Troubadour" or attacker_class == "Thief" or attacker_class == "Dancer":
+if attacker_class == "cleric" or attacker_class == "priest" or attacker_class == "Soldier" or attacker_class == "Troubadour" or attacker_class == "Thief" or attacker_class == "Dancer":
     attacker_class_power = 2
 elif attacker_class == "Grima":
     attacker_class_power = 5
@@ -101,6 +101,15 @@ elif attacker_class == "Great Lord" or attacker_class == "Grandmaster" or attack
 else:
     attacker_class_bonus_b = 0
     print(attacker_class_bonus_b)
+
+    # Boss Bonus
+
+if attacker_boss == "Yes":
+    attacker_boss_bonus = 40
+    print(attacker_boss_bonus)
+else:
+    attacker_boss_bonus = 0
+    print(attacker_boss_bonus)
 
 # Battle Formulas
 
