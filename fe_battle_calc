@@ -375,7 +375,8 @@ if battle_ready == "yes":
         if attacker_current_hp > 0:
             if attacker_hit_roll <= attacker_accuracy:
                 if defender_current_hp > 0:
-                    attacker_exp_gained = 31 + ((defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power
+                    attacker_exp_gained = (31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power
+                    print(attacker_exp_gained)
             else:
                 print(attacker_name + " gained 0 experience points.")
 
