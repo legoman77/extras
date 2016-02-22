@@ -220,6 +220,7 @@ defender_crit_damage = defender_damage * 3
 
 # Battle Preview
 
+print(c.clear)
 print("Battle Preview:")
 print(attacker_name + ":")
 print("Damage: " + str(attacker_damage) + "x" + str(attacker_attack_times))
@@ -376,7 +377,9 @@ if battle_ready == "yes":
             if attacker_hit_roll <= attacker_accuracy:
                 if defender_current_hp > 0:
                     attacker_exp_gained = (31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power
-                    print(attacker_exp_gained)
+                    attacker_exp += int(attacker_exp_gained)
+                    print(attacker_name + " has " + str(attacker_exp) + " experience points!")
+
             else:
                 print(attacker_name + " gained 0 experience points.")
 
