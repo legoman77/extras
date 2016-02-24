@@ -381,7 +381,7 @@ if battle_ready == "yes":
                     print(attacker_name + " has " + str(attacker_exp) + " experience points!")
                 else:
                     attacker_damage_exp = (31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power
-                    attacker_base_exp = ((defender_level * defender_class_power) + defender_class_bonus_b) -
+                    attacker_base_exp = ((defender_level * defender_class_power) + defender_class_bonus_b) - ((attacker_level * attacker_class_power) + attacker_class_bonus_b)
             else:
                 print(attacker_name + " gained 0 experience points.")
 
