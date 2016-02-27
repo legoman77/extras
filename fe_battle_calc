@@ -76,7 +76,9 @@ if attacker_weapon_type == "tome":
 
     # Class Power
 
-if attacker_class == "cleric" or attacker_class == "priest" or attacker_class == "soldier" or attacker_class == "troubadour" or attacker_class == "thief" or attacker_class == "dancer":
+if attacker_class == "villager" or attacker_class == "entombed" or attacker_class == "mirage":
+    attacker_class_power = 1
+if attacker_class == "cleric" or attacker_class == "priest" or attacker_class == "soldier" or attacker_class == "troubadour" or attacker_class == "thief" or attacker_class == "dancer" or attacker_class == "taguel" or attacker_class == "manakete":
     attacker_class_power = 2
 elif attacker_class == "grima":
     attacker_class_power = 5
@@ -92,9 +94,9 @@ else:
 
     # Class Bonus B
 
-if attacker_class == "assassin" or attacker_class == "war cleric" or attacker_class == "valkyrie":
+if attacker_class == "assassin" or defender_class == "trickster" or defender_class == "war monk" or attacker_class == "war cleric" or attacker_class == "valkyrie":
     attacker_class_bonus_b = 40
-elif attacker_class == "great lord" or attacker_class == "grandmaster" or attacker_class == "paladin" or attacker_class == "general" or attacker_class == "great knight" or attacker_class == "swordmaster" or attacker_class == "trickster" or attacker_class == "berserker" or attacker_class == "warrior" or attacker_class == "hero" or attacker_class == "sniper" or attacker_class == "bow knight" or attacker_class == "sorcerer" or attacker_class == "sage" or attacker_class == "dark knight" or attacker_class == "war monk" or attacker_class == "valkyrie" or attacker_class == "falcon knight" or attacker_class == "dark flier" or attacker_class == "wyvern lord" or attacker_class == "griffon rider" or attacker_class == "entombed":
+elif attacker_class == "great lord" or attacker_class == "grandmaster" or attacker_class == "paladin" or attacker_class == "general" or attacker_class == "great knight" or attacker_class == "swordmaster" or attacker_class == "berserker" or attacker_class == "warrior" or attacker_class == "hero" or attacker_class == "sniper" or attacker_class == "bow knight" or attacker_class == "sorcerer" or attacker_class == "sage" or attacker_class == "dark knight" or attacker_class == "falcon knight" or attacker_class == "dark flier" or attacker_class == "wyvern lord" or attacker_class == "griffon rider" or attacker_class == "entombed":
     attacker_class_bonus_b = 60
 else:
     attacker_class_bonus_b = 0
@@ -108,7 +110,7 @@ else:
 
     # Thief Bonus
 
-if attacker_class == "thief" or attacker_class == "assassin":
+if attacker_class == "thief" or attacker_class == "assassin" or attacker_class == "trickster":
     attacker_thief_bonus = 20
 else:
     attacker_thief_bonus = 0
@@ -117,7 +119,9 @@ else:
 
     # Class Power
 
-if defender_class == "cleric" or defender_class == "priest" or defender_class == "soldier" or defender_class == "troubadour" or defender_class == "thief" or defender_class == "dancer":
+if defender_class == "villager" or defender_class == "entombed" or defender_class == "mirage":
+    defender_class_power = 1
+if defender_class == "cleric" or defender_class == "priest" or defender_class == "soldier" or defender_class == "troubadour" or defender_class == "thief" or defender_class == "dancer" or defender_class == "taguel" or defender_class == "manakete":
     defender_class_power = 2
 elif defender_class == "grima":
     defender_class_power = 5
@@ -133,9 +137,9 @@ else:
 
     # Class Bonus B
 
-if defender_class == "assassin" or defender_class == "war cleric" or defender_class == "valkyrie":
+if defender_class == "assassin" or defender_class == "trickster" or defender_class == "war monk" or defender_class == "war cleric" or defender_class == "valkyrie":
     defender_class_bonus_b = 40
-elif defender_class == "great lord" or defender_class == "grandmaster" or defender_class == "paladin" or defender_class == "general" or defender_class == "great knight" or defender_class == "swordmaster" or defender_class == "trickster" or defender_class == "berserker" or defender_class == "warrior" or defender_class == "hero" or defender_class == "sniper" or defender_class == "bow knight" or defender_class == "sorcerer" or defender_class == "sage" or defender_class == "dark knight" or defender_class == "war monk" or defender_class == "valkyrie" or defender_class == "falcon knight" or defender_class == "dark flier" or defender_class == "wyvern lord" or defender_class == "griffon rider" or defender_class == "entombed":
+elif defender_class == "great lord" or defender_class == "grandmaster" or defender_class == "paladin" or defender_class == "general" or defender_class == "great knight" or defender_class == "swordmaster" or defender_class == "berserker" or defender_class == "warrior" or defender_class == "hero" or defender_class == "sniper" or defender_class == "bow knight" or defender_class == "sorcerer" or defender_class == "sage" or defender_class == "dark knight" or defender_class == "valkyrie" or defender_class == "falcon knight" or defender_class == "dark flier" or defender_class == "wyvern lord" or defender_class == "griffon rider" or defender_class == "entombed":
     defender_class_bonus_b = 60
 else:
     defender_class_bonus_b = 0
@@ -149,7 +153,7 @@ else:
 
     # Thief Bonus
 
-if defender_class == "thief" or defender_class == "assassin":
+if defender_class == "thief" or defender_class == "assassin" or defender_class == "trickster":
     defender_thief_bonus = 20
 else:
     defender_thief_bonus = 0
@@ -374,14 +378,44 @@ if battle_ready == "yes":
         # Attacker
 
         if attacker_current_hp > 0:
+            
+            # Attacker hits
+            
             if attacker_hit_roll <= attacker_accuracy:
+                
+                # Attacker doesn't kill
+
                 if defender_current_hp > 0:
-                    attacker_exp_gained = (31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power
-                    attacker_exp += int(attacker_exp_gained)
-                    print(attacker_name + " has " + str(attacker_exp) + " experience points!")
+                    
+                    # Experience from dealing damage
+
+                    attacker_exp_gained = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
+                    attacker_exp += attacker_exp_gained
+                    print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+                
+                # Attacker kills
+                
                 else:
-                    attacker_damage_exp = (31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power
-                    attacker_base_exp = ((defender_level * defender_class_power) + defender_class_bonus_b) - ((attacker_level * attacker_class_power) + attacker_class_bonus_b)
+                    
+                    # Experience from dealing damage
+
+                    attacker_damage_exp = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
+                    
+                    # Experience from defeating (base)
+
+                    attacker_base_exp = int(((defender_level * defender_class_power) + defender_class_bonus_b) - ((attacker_level * attacker_class_power) + attacker_class_bonus_b))
+                    
+                    # Experience from defeating enemy
+
+                    attacker_base_defeat_exp = int(attacker_base_exp + 20 + defender_boss_bonus + defender_thief_bonus)
+                    if attacker_base_defeat_exp < 0:
+                        attacker_base_defeat_exp = 0
+                    attacker_defeat_exp = int(attacker_damage_exp + attacker_base_defeat_exp)
+                    attacker_exp += attacker_defeat_exp
+                    print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+            
+            # Attacker misses
+
             else:
-                print(attacker_name + " gained 0 experience points.")
+                print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
 
