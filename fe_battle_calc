@@ -423,9 +423,10 @@ if battle_ready == "yes":
             else:
                 print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
         
-        # Attacker's max level 20
+        # Attacker's max level is 20
 
         else:
+            
             if attacker_current_hp > 0:
             
                 # Attacker hits
@@ -465,6 +466,6 @@ if battle_ready == "yes":
             
                 # Attacker misses
 
-                else:
-                    print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+            else:
+                print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
 
