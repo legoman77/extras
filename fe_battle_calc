@@ -29,7 +29,7 @@ attacker_weapon_hit = int(input("Attacker's weapon's Hit % > "))
 attacker_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
 attacker_weapon_range = input("Attacker's weapon's Range > ")
 attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ").lower()
-
+attacker_hp_growth
 # Attacker's attack type (physical or magical)
 
 if attacker_weapon_type == "tome":
