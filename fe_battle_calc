@@ -397,6 +397,16 @@ if battle_ready == "yes":
 
                             attacker_exp_gained = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
                             attacker_exp += attacker_exp_gained
+                            
+                            # Leveling up
+                            
+                            attacker_level_ups = int(attacker_exp/100)
+                            attacker_exp -= attacker_level_ups * 100
+                            while attacker_level_ups > 0:
+                                attacker_level += 1
+                                print(attacker_name + " leveled up!")
+                                print(attacker_name + "'s level is now " + str(attacker_level) + ".")
+                                attacker_level_ups -= 1
                             print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
                 
                         # Attacker kills
@@ -409,26 +419,36 @@ if battle_ready == "yes":
                     
                             # Experience from defeating (base)
 
-                        attacker_base_exp = int(((defender_level * defender_class_power) + defender_class_bonus_b) - ((attacker_level * attacker_class_power) + attacker_class_bonus_b))
+                            attacker_base_exp = int(((defender_level * defender_class_power) + defender_class_bonus_b) - ((attacker_level * attacker_class_power) + attacker_class_bonus_b))
                     
-                        # Experience from defeating enemy
+                            # Experience from defeating enemy
 
-                        attacker_base_defeat_exp = int(attacker_base_exp + 20 + defender_boss_bonus + defender_thief_bonus)
-                        if attacker_base_defeat_exp < 0:
-                            attacker_base_defeat_exp = 0
-                        attacker_defeat_exp = int(attacker_damage_exp + attacker_base_defeat_exp)
-                        attacker_exp += attacker_defeat_exp
-                        print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+                            attacker_base_defeat_exp = int(attacker_base_exp + 20 + defender_boss_bonus + defender_thief_bonus)
+                            if attacker_base_defeat_exp < 0:
+                                attacker_base_defeat_exp = 0
+                            attacker_defeat_exp = int(attacker_damage_exp + attacker_base_defeat_exp)
+                            attacker_exp += attacker_defeat_exp
+                            
+                            # Leveling up
+
+                            attacker_level_ups = int(attacker_exp/100)
+                            attacker_exp -= attacker_level_ups * 100
+                            while attacker_level_ups > 0:
+                                attacker_level += 1
+                                print(attacker_name + " leveled up!")
+                                print(attacker_name + "'s level is now " + str(attacker_level) + ".")
+                                attacker_level_ups -= 1
+                            print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
             
-            # Attacker misses
+                # Attacker misses
 
                 else:
                     print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
         
-        # Attacker is at max level
+            # Attacker is at max level
 
-        else:
-            print(attacker_name + " now has " + attacker_exp + " experience points!")
+            else:
+                print(attacker_name + " now has " + attacker_exp + " experience points!")
 
         # Attacker's max level is 20
 
@@ -436,43 +456,69 @@ if battle_ready == "yes":
             
             if attacker_current_hp > 0:
             
-                # Attacker hits
+                if attacker_level < 20:
+               
+                    # Attacker hits
             
-                if attacker_hit_roll <= attacker_accuracy:
+                    if attacker_hit_roll <= attacker_accuracy:
                 
-                    # Attacker doesn't kill
+                        # Attacker doesn't kill
 
-                    if defender_current_hp > 0:
+                        if defender_current_hp > 0:
                     
-                        # Experience from dealing damage
+                            # Experience from dealing damage
 
-                        attacker_exp_gained = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
-                        attacker_exp += attacker_exp_gained
-                        print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+                            attacker_exp_gained = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
+                            attacker_exp += attacker_exp_gained
+                            
+                            # Leveling up
+                            
+                            attacker_level_ups = int(attacker_exp/100)
+                            attacker_exp -= attacker_level_ups * 100
+                            while attacker_level_ups > 0:
+                                attacker_level += 1
+                                print(attacker_name + " leveled up!")
+                                print(attacker_name + "'s level is now " + str(attacker_level) + ".")
+                                attacker_level_ups -= 1
+                            print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
                 
-                    # Attacker kills
+                        # Attacker kills
                 
-                    else:
+                        else:
                     
-                        # Experience from dealing damage
+                            # Experience from dealing damage
 
-                        attacker_damage_exp = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
+                            attacker_damage_exp = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
                     
-                        # Experience from defeating (base)
+                            # Experience from defeating (base)
 
-                        attacker_base_exp = int(((defender_level * defender_class_power) + defender_class_bonus_b) - ((attacker_level * attacker_class_power) + attacker_class_bonus_b))
+                            attacker_base_exp = int(((defender_level * defender_class_power) + defender_class_bonus_b) - ((attacker_level * attacker_class_power) + attacker_class_bonus_b))
                     
-                        # Experience from defeating enemy
+                            # Experience from defeating enemy
 
-                        attacker_base_defeat_exp = int(attacker_base_exp + 20 + defender_boss_bonus + defender_thief_bonus)
-                        if attacker_base_defeat_exp < 0:
-                            attacker_base_defeat_exp = 0
-                        attacker_defeat_exp = int(attacker_damage_exp + attacker_base_defeat_exp)
-                        attacker_exp += attacker_defeat_exp
-                        print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+                            attacker_base_defeat_exp = int(attacker_base_exp + 20 + defender_boss_bonus + defender_thief_bonus)
+                            if attacker_base_defeat_exp < 0:
+                                attacker_base_defeat_exp = 0
+                            attacker_defeat_exp = int(attacker_damage_exp + attacker_base_defeat_exp)
+                            attacker_exp += attacker_defeat_exp
+                        
+                            # Leveling up
+
+                            attacker_level_ups = int(attacker_exp/100)
+                            attacker_exp -= attacker_level_ups * 100
+                            while attacker_level_ups > 0:
+                                attacker_level += 1
+                                print(attacker_name + " leveled up!")
+                                print(attacker_name + "'s level is now " + str(attacker_level) + ".")
+                                attacker_level_ups -= 1
+                            print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
             
-                # Attacker misses
+                    # Attacker misses
+
+                else:
+                    print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+            
+            # Attacker is at max level
 
             else:
                 print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
-
