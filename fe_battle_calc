@@ -29,7 +29,15 @@ attacker_weapon_hit = int(input("Attacker's weapon's Hit % > "))
 attacker_weapon_crit = int(input("Attacker's weapon's Critical Rate > "))
 attacker_weapon_range = input("Attacker's weapon's Range > ")
 attacker_weapon_effect = input("Attacker's weapon's added effect(s) > ").lower()
-attacker_hp_growth
+attacker_hp_growth = int(input("Attacker's HP growth > "))
+attacker_strength_growth = int(input("Attacker's Strength growth > "))
+attacker_magic_growth = int(input("Attacker's Magic growth > "))
+attacker_skill_growth = int(input("Attacker's Skill growth > "))
+attacker_speed_growth = int(input("Attacker's Speed growth > "))
+attacker_luck_growth = int(input("Attacker's Luck growth > "))
+attacker_defense_growth = int(input("Attacker's Defense growth > "))
+attacker_resistance_growth = int(input("Attacker's Resistance growth > "))
+
 # Attacker's attack type (physical or magical)
 
 if attacker_weapon_type == "tome":
@@ -60,6 +68,14 @@ defender_weapon_hit = int(input("Defender's weapon's Hit % > "))
 defender_weapon_crit = int(input("Defender's weapon's Critical Rate > "))
 defender_weapon_range = input("Defender's weapon's Range > ")
 defender_weapon_effect = input("Defender's weapon's added effect(s) > ").lower()
+defender_hp_growth = int(input("Attacker's HP growth > "))
+defender_strength_growth = int(input("Attacker's Strength growth > "))
+defender_magic_growth = int(input("Attacker's Magic growth > "))
+defender_skill_growth = int(input("Attacker's Skill growth > "))
+defender_speed_growth = int(input("Attacker's Speed growth > "))
+defender_luck_growth = int(input("Attacker's Luck growth > "))
+defender_defense_growth = int(input("Attacker's Defense growth > "))
+defender_resistance_growth = int(input("Attacker's Resistance growth > "))
 
 # Defender's attack type (physical or magical) and attacker's defense type (physical or magical)
 
@@ -407,6 +423,7 @@ if battle_ready == "yes":
                                 print(attacker_name + " leveled up!")
                                 print(attacker_name + "'s level is now " + str(attacker_level) + ".")
                                 attacker_level_ups -= 1
+                                attacker_hp_roll = random.
                             print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
                 
                         # Attacker kills
