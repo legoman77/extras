@@ -423,7 +423,6 @@ if battle_ready == "yes":
                                 print(attacker_name + " leveled up!")
                                 print(attacker_name + "'s level is now " + str(attacker_level) + ".")
                                 attacker_level_ups -= 1
-                                attacker_hp_roll = random.
                             print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
                 
                         # Attacker kills
@@ -455,6 +454,14 @@ if battle_ready == "yes":
                                 print(attacker_name + " leveled up!")
                                 print(attacker_name + "'s level is now " + str(attacker_level) + ".")
                                 attacker_level_ups -= 1
+                                attacker_hp_levels = int(attacker_hp_growth/100)
+                                attacker_hp_growth -= attacker_hp_levels*100
+                                print(attacker_hp_levels)
+                                print(attacker_hp_growth)
+                                attacker_hp_roll = random.randint(1,100)
+                                if attacker_hp_roll <= attacker_hp_growth:
+                                    attacker_max_hp += 1
+                                    print(attacker_max_hp)
                             print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
             
                 # Attacker misses
