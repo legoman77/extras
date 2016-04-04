@@ -1233,67 +1233,67 @@ if battle_ready == "yes":
                           
                           # Magic
 
-                          defender_magic_levels = int(defe_magic_growth/100)
-                          defender_magic_growth -= attacker_magic_levels * 100
+                          defender_magic_levels = int(defender_magic_growth/100)
+                          defender_magic_growth -= defender_magic_levels * 100
                           
                           # Skill
 
-                          attacker_skill_levels = int(attacker_skill_growth/100)
-                          attacker_skill_growth -= attacker_skill_levels * 100
+                          defender_skill_levels = int(defender_skill_growth/100)
+                          defender_skill_growth -= defender_skill_levels * 100
                           
                           # Speed
 
-                          attacker_speed_levels = int(attacker_speed_growth/100)
-                          attacker_speed_growth -= attacker_speed_levels * 100
+                          defender_speed_levels = int(defender_speed_growth/100)
+                          defender_speed_growth -= defender_speed_levels * 100
                           
                           # Luck
 
-                          attacker_luck_levels = int(attacker_luck_growth/100)
-                          attacker_luck_growth -= attacker_luck_levels * 100
+                          defender_luck_levels = int(defender_luck_growth/100)
+                          defender_luck_growth -= defender_luck_levels * 100
                           
                           # Defense
 
-                          attacker_defense_levels = int(attacker_defense_growth/100)
-                          attacker_defense_growth -= attacker_defense_levels * 100
+                          defender_defense_levels = int(defender_defense_growth/100)
+                          defender_defense_growth -= defender_defense_levels * 100
                           
                           # Resistance
 
-                          attacker_resistance_levels = int(attacker_resistance_growth/100)
-                          attacker_resistance_growth -= attacker_resistance_levels * 100
+                          defender_resistance_levels = int(defender_resistance_growth/100)
+                          defender_resistance_growth -= defender_resistance_levels * 100
                           
                           # Level ups
 
-                          while attacker_level_ups > 0:
-                              attacker_level += 1
-                              print(attacker_name + " leveled up!")
-                              print(attacker_name + "'s level is now " + str(attacker_level) + ".")
-                              attacker_level_ups -= 1
+                          while defender_level_ups > 0:
+                              defender_level += 1
+                              print(defender_name + " leveled up!")
+                              print(defender_name + "'s level is now " + str(defender_level) + ".")
+                              defender_level_ups -= 1
                               
                               # HP
 
-                              while attacker_hp_levels > 0:
-                                  attacker_max_hp += 1
-                                  attacker_hp_levels -= 1
-                              attacker_hp_roll = random.randint(1,100)
-                              if attacker_hp_roll <= attacker_hp_growth:
-                                  attacker_max_hp += 1
-                              print(attacker_name + "'s max HP is now " + str(attacker_max_hp) + ".")
+                              while defender_hp_levels > 0:
+                                  defender_max_hp += 1
+                                  defender_hp_levels -= 1
+                              defender_hp_roll = random.randint(1,100)
+                              if defender_hp_roll <= defender_hp_growth:
+                                  defender_max_hp += 1
+                              print(defender_name + "'s max HP is now " + str(defender_max_hp) + ".")
                               
                               # Strength
 
-                              while attacker_strength_levels > 0:
-                                  attacker_strength += 1
-                                  attacker_strength_levels -= 1
-                              attacker_strength_roll = random.randint(1,100)
-                              if attacker_strength_roll <= attacker_strength_growth:
-                                  attacker_strength += 1
-                              print(attacker_name + "'s Strength is now " + str(attacker_strength) + ".")
+                              while defender_strength_levels > 0:
+                                defender_strength += 1
+                                defender_strength_levels -= 1
+                              defender_strength_roll = random.randint(1,100)
+                              if defender_strength_roll <= defender_strength_growth:
+                                  defender_strength += 1
+                              print(defender_name + "'s Strength is now " + str(defender_strength) + ".")
                               
                               # Magic
 
-                              while attacker_magic_levels > 0:
-                                  attacker_magic += 1
-                                  attacker_magic_levels -= 1
+                              while defender_magic_levels > 0:
+                                  defender_magic += 1
+                                  defender_magic_levels -= 1
                               attacker_magic_roll = random.randint(1,100)
                               if attacker_magic_roll <= attacker_magic_growth:
                                   attacker_magic += 1
