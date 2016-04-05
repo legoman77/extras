@@ -1294,30 +1294,30 @@ if battle_ready == "yes":
                               while defender_magic_levels > 0:
                                   defender_magic += 1
                                   defender_magic_levels -= 1
-                              attacker_magic_roll = random.randint(1,100)
-                              if attacker_magic_roll <= attacker_magic_growth:
-                                  attacker_magic += 1
-                              print(attacker_name + "'s Magic is now " + str(attacker_magic) + ".")
+                              defender_magic_roll = random.randint(1,100)
+                              if defender_magic_roll <= defender_magic_growth:
+                                  defender_magic += 1
+                              print(defender_name + "'s Magic is now " + str(defender_magic) + ".")
                               
                               # Skill
 
-                              while attacker_skill_levels > 0:
-                                  attacker_skill += 1
-                                  attacker_skill_levels -= 1
-                              attacker_skill_roll = random.randint(1,100)
-                              if attacker_skill_roll <= attacker_skill_growth:
-                                  attacker_skill += 1
-                              print(attacker_name + "'s Skill is now " + str(attacker_skill) + ".")
+                              while defender_skill_levels > 0:
+                                  defender_skill += 1
+                                  defender_skill_levels -= 1
+                              defender_skill_roll = random.randint(1,100)
+                              if defender_skill_roll <= defender_skill_growth:
+                                  defender_skill += 1
+                              print(defender_name + "'s Skill is now " + str(defender_skill) + ".")
                               
                               # Speed
 
-                              while attacker_speed_levels > 0:
-                                  attacker_speed += 1
-                                  attacker_speed_levels -= 1
-                              attacker_speed_roll = random.randint(1,100)
-                              if attacker_speed_roll <= attacker_speed_growth:
-                                  attacker_speed += 1
-                              print(attacker_name + "'s Speed is now " + str(attacker_speed) + ".")
+                              while defender_speed_levels > 0:
+                                  defender_speed += 1
+                                  defender_speed_levels -= 1
+                              defender_speed_roll = random.randint(1,100)
+                              if defender_speed_roll <= defender_speed_growth:
+                                  defender_speed += 1
+                              print(defender_name + "'s Speed is now "+ str(defender_speed) + ".")
                               
                               # Luck
 
