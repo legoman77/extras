@@ -1321,18 +1321,18 @@ if battle_ready == "yes":
                               
                               # Luck
 
-                              while attacker_luck_levels > 0:
-                                  attacker_luck += 1
-                                  attacker_luck_levels -= 1
-                              attacker_luck_roll = random.randint(1,100)
-                              if attacker_luck_roll <= attacker_luck_growth:
-                                  attacker_luck += 1
-                              print(attacker_name + "'s Luck is now " + str(attacker_luck) + ".")
+                              while defender_luck_levels > 0:
+                                  defender_luck += 1
+                                  defender_luck_levels -= 1
+                              defender_luck_roll = random.randint(1,100)
+                              if defender_luck_roll <= defender_luck_growth:
+                                  defender_luck += 1
+                              print(defender_name + "'s Luck is now " + str(defender_luck) + ".")
                               
                               # Defense
 
-                              while attacker_defense_levels > 0:
-                                  attacker_defense += 1
+                              while defender_defense_levels > 0:
+                                  defender_defense += 1
                                   attacker_defense_levels -= 1
                               attacker_defense_roll = random.randint(1,100)
                               if attacker_defense_roll <= attacker_defense_growth:
