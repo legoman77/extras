@@ -1333,59 +1333,59 @@ if battle_ready == "yes":
 
                               while defender_defense_levels > 0:
                                   defender_defense += 1
-                                  attacker_defense_levels -= 1
-                              attacker_defense_roll = random.randint(1,100)
-                              if attacker_defense_roll <= attacker_defense_growth:
-                                  attacker_defense += 1
-                              print(attacker_name + "'s Defense is now " + str(attacker_defense) + ".")
+                                  defender_defense_levels -= 1
+                              defender_defense_roll = random.randint(1,100)
+                              if defender_defense_roll <= defender_defense_growth:
+                                  defender_defense += 1
+                              print(defender_name + "'s Defense is now " + str(defender_defense) + ".")
                               
                               # Resistance
 
-                              while attacker_resistance_levels > 0:
-                                  attacker_resistance += 1
-                                  attacker_resistance_levels -= 1
-                              attacker_resistance_roll = random.randint(1,100)
-                              if attacker_resistance_roll <= attacker_resistance_growth:
-                                  attacker_resistance += 1
-                              print(attacker_name + "'s Resistance is now " + str(attacker_resistance)  + ".")
+                              while defender_resistance_levels > 0:
+                                  defender_resistance += 1
+                                  defender_resistance_levels -= 1
+                              defender_resistance_roll = random.randint(1,100)
+                              if defender_resistance_roll <= defender_resistance_growth:
+                                  defender_resistance += 1
+                              print(defender_name + "'s Resistance is now " + str(defender_resistance)  + ".")
                           
-                          print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+                          print(defender_name + " now has " + str(defender_exp) + " experience points!")
           
-              # Attacker misses
+              # Defender misses
 
               else:
-                  print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+                  print(defender_name + " now has " + str(defender_exp) + " experience points!")
       
-          # Attacker is at max level
+          # Defender is at max level
 
           else:
-              print(attacker_name + " now has " + str(attacker_exp) + " experience points!")
+              print(defender_name + " now has " + str(defender_exp) + " experience points!")
 
-      # Attacker's max level is 20
+      # Defender's max level is 20
 
       else:
           
-          if attacker_current_hp > 0:
+          if defender_current_hp > 0:
           
-              if attacker_level < 20:
+              if defender_level < 20:
              
-                  # Attacker hits
+                  # Defender hits
           
-                  if attacker_hit_roll <= attacker_accuracy:
+                  if defender_hit_roll <= defender_accuracy:
               
-                      # Attacker doesn't kill
+                      # Defender doesn't kill
 
-                      if defender_current_hp > 0:
+                      if attacker_current_hp > 0:
                   
                           # Experience from dealing damage
 
-                          attacker_exp_gained = int((31 + (defender_level + defender_class_bonus_a) - (attacker_level + attacker_class_bonus_a))/attacker_class_power)
-                          attacker_exp += attacker_exp_gained
+                          defender_exp_gained = int((31 + (attacker_level + attacker_class_bonus_a) - (defender_level + defender_class_bonus_a))/defender_class_power)
+                          defender_exp += defender_exp_gained
                           
                           # Leveling up
 
-                          attacker_level_ups = int(attacker_exp/100)
-                          attacker_exp -= attacker_level_ups * 100
+                          defender_level_ups = int(defender_exp/100)
+                          defender_exp -= defender_level_ups * 100
                           
                           # HP
 
